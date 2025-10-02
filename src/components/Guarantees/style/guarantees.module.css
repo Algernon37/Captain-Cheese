@@ -1,0 +1,29 @@
+.guaranteesBlock {
+  font-size: 26px;
+  padding-top: 200px;
+}
+
+.guaranteesPoints {
+  list-style-type: none;
+  padding-left: 20px;
+}
+.guaranteesPoints li {
+  position: relative;
+  padding-left: 60px;
+}
+.guaranteesPoints li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: translateY(-10%);
+  width: 40px;
+  height: 40px;
+  background-image: url(icons/mark.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: -20px;
+}
+
+.point {
+  margin-top: 35px;
+}/*# sourceMappingURL=guarantees.module.css.map */

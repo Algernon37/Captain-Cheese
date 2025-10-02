@@ -1,0 +1,79 @@
+.portfolioBlock {
+  height: auto;
+  padding-top: 100px;
+}
+.portfolioBlock .firstBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolioBlock .mainTitle {
+  font-size: 56px;
+  font-family: "Prata";
+  font-weight: 500;
+  background: linear-gradient(to right, black, #4824ff);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.portfolioBlock .arrayIcon {
+  margin: 0 20px;
+  padding: 0;
+  width: 60px;
+  filter: drop-shadow(20px 20px 15px rgba(72, 36, 255, 0.1450980392));
+}
+.portfolioBlock .titleBorder {
+  font-size: 56px;
+  font-family: "Prata";
+  font-weight: 500;
+  color: white;
+  margin: 10px 0;
+  text-shadow: -1px -1px 0 rgba(72, 36, 255, 0.1882352941), 1px -1px 0 rgba(72, 36, 255, 0.1882352941), -1px 1px 0 rgba(72, 36, 255, 0.1882352941), 1px 1px 0 rgba(72, 36, 255, 0.1882352941);
+}
+.portfolioBlock .tag {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  background: #eeebff;
+  color: #4824ff;
+  margin-right: 12px;
+  padding: 8px 22px 8px 22px;
+  border-radius: 24px;
+  border: 1px solid #eeebff;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.portfolioBlock .tag:hover {
+  background: #4824ff;
+  color: white;
+  filter: drop-shadow(0px 0px 30px rgba(72, 36, 255, 0.1882352941));
+}
+.portfolioBlock .selected {
+  background: #04001a;
+  color: white;
+  border: 1px solid #4824ff;
+}
+
+.gradiantPartOne {
+  position: absolute;
+  background: linear-gradient(to right, transparent, white);
+  color: transparent;
+  height: 80px;
+  width: 200px;
+}
+
+.gradiantPartTwo {
+  position: absolute;
+  background: linear-gradient(to left, transparent, white);
+  color: transparent;
+  height: 80px;
+  width: 100px;
+}
+
+.hideInDark {
+  display: block;
+}
+
+html[data-theme=dark] .hideInDark {
+  display: none;
+}/*# sourceMappingURL=portfolioblock.module.css.map */

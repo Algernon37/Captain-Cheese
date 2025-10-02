@@ -1,0 +1,135 @@
+.reviewBlock 
+    min-height: 500px
+    background: #4824ff
+    border-radius: 28px
+
+    h1
+        color: white
+        text-align: center
+        padding-top: 36px
+        font-size: 50px
+
+    .description 
+        color: white
+        text-align: center
+        margin-bottom: 25px 
+        font-size: 22px
+        line-height: 32px
+
+    .selecting
+        background: white
+        color: black
+        margin: 0 8px
+        font-weight: 500
+
+.reviewCarousel 
+    display: flex
+    justify-content: center
+    margin: auto
+    width: 100%
+    max-width: 1260px
+    overflow: hidden
+
+.reviewContainer 
+  display: flex
+  overflow-x: scroll
+  scroll-behavior: smooth
+  justify-content: flex-start
+
+
+.nextButton
+    width: 55px
+    height: 55px
+    border-radius: 50%
+    background: white
+    cursor: pointer
+    transition: 0.7s
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &:hover
+        background: #00000050
+
+    .arrayNextIcon
+        content: url("icons/arrowRight.png")
+        scale: 0.7
+        height: 80px
+        padding: 15px
+
+    &:hover .arrayNextIcon
+        filter: invert(100%)
+
+.reviewCard
+    flex: 0 0 auto
+    min-width: 420px
+
+.reviewContent 
+    width: 384px
+    background: var(--main-background)
+    border-radius: 24px
+    margin: 0 18px
+
+.reviewBlock .review
+    margin-top: auto
+    font-size: 19px
+    line-height: 27px
+    width: 90%
+
+.reviewBlock .link
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 5px
+    height: 40px
+    width: 80px
+    background: black
+    border-radius: 24px
+    cursor: pointer
+    border: 2px solid black
+    transition: 0.5s ease-in-out
+
+    &:hover
+        border: 2px double #4824ff
+        filter: drop-shadow(0px 0px 25px #4824ff90)
+
+.reviewBlock .telegramIcon
+    margin: -7px -4px
+    padding: 0
+    content: url("icons/BlueTelegram.png")
+    background: none
+    scale: 0.84
+    height: 30px
+
+.reviewBlock .arrayCornerIcon
+    margin: -6px -18px
+    padding: 0
+    content: url("icons/arrayCornerIcon.png")
+    background: none
+    scale: 0.37
+    height: 55px
+
+html[data-theme='dark'] .reviewContent 
+    background: var(--main-background)
+
+html[data-theme='dark'] .link
+    background: white
+
+html[data-theme='dark'] .arrayCornerIcon
+    filter: invert(1)
+
+@media (min-width: 1024px) and (max-width: 1390px)
+  .reviewCarousel
+    max-width: 850px 
+    width: 100%
+    margin: 0 auto
+    
+@media (max-width: 1023px)
+  .reviewCarousel
+    max-width: 420px 
+    width: 100%
+    margin: 0 auto
+
+
+
+

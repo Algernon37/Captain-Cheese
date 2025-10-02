@@ -1,0 +1,68 @@
+
+.imageGallery
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-left: 5vw
+    margin-right: 5vw
+
+.imageGrid
+    display: flex
+    flex-wrap: wrap
+    max-height: calc( 200px * var(--visibleRows))
+    overflow: hidden
+
+.galleryImage
+    width: auto
+    height: 200px
+    border-radius: 16px
+    margin: 10px
+    cursor: pointer
+
+.showMoreButton
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 10px
+    font-size: 22px
+    margin-top: 10px
+    padding: 5px 5px 5px 20px
+    background-color: #4824ff
+    color: white
+    border: none
+    cursor: pointer
+    border-radius: 12px
+    transition: background-color 0.3s ease-in-out
+
+    &:hover
+        background-color: black
+        filter: drop-shadow(0px 0px 30px #4824ff25)
+
+.moreIcon
+    margin-left: -12px
+    padding: 0px
+    position: relative
+    content: url(/icons/arrow.png)
+    background: none
+    scale: 0.5
+    height: 60px
+
+.modalWindowImage
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.8)
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: opacity 0.5s easy, visibility 0.5s easy
+    z-index: 1000
+
+.modalImage
+    max-width: 90vw
+    max-height: 90vh
+    border-radius: 10px
+    z-index: 1000

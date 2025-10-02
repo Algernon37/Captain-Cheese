@@ -1,0 +1,61 @@
+{
+    "menu": {
+      "about": "About me",
+      "assortment": "Assortment",
+      "reviews": "Reviews",
+      "guarantees": "Guarantees",
+      "faq": "FAQ",
+      "contacts": "Contacts"
+    },
+    "welcome": {
+      "title": "Cheese making <1>Master</1>",
+      "line1": "I create <1>amazing</1> and <3>unique</3> cheeses to order",
+      "line2": "I have been making cheese for <1>10 years</1>"
+    },
+    "portfolio": {
+      "title": "Assortment",
+      "tags": {
+        "all": "All cheeses",
+        "hard": "Hard cheeses",
+        "soft": "Soft cheeses",
+        "cheesecake": "Cheesecakes",
+        "brined": "Brined cheeses"
+      }
+    },
+    "modal": {
+      "pricePer100g": "Price per 100g",
+      "contact": "You can contact me on Telegram 👇",
+      "telegram": "Telegram"
+    },
+    "gallery": {
+      "showMore": "Show more"
+    },
+    "reviews": {
+    "title": "REVIEWS",
+    "description": {
+      "part1": "Customer reviews written from their ",
+      "highlight1": "personal Telegram accounts",
+      "part2": ". Everything is transparent!",
+      "part3": " You can ",
+      "highlight2": "open",
+      "part4": " any review in Telegram and ",
+      "highlight3": "ask",
+      "part5": " them about their impressions of my work."
+    }
+  },
+  "guarantees": {
+    "title": "GUARANTEES",
+    "point1": "Every order is <1>personally packed</1> in thermal packaging so the cheese<2/>arrives fresh and tasty — even in hot weather.",
+    "point2": "The cheese photos on the site are <1>real photos</1><2/>taken by me before sending orders.",
+    "point3": "You can verify the quality of my cheeses by <1>messaging my clients</1><2/>who left reviews <3>in my Telegram channel</3> anytime.",
+    "point4": "I’m always available on <1>Telegram</1> — I respond quickly,<2/>advise on storage and cheese selection."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "text": "Have questions, suggestions, or <blue>want to order cheese</blue>?<br/><blue>Write to me</blue> — I’m always happy to chat and meet new people!<br/>My <blue>Telegram</blue> and other contacts are waiting below."
+  }
+}
+  

@@ -1,0 +1,61 @@
+.contactsBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 150px;
+  padding-top: 200px;
+}
+.contactsBlock__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contactsBlock__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 5px;
+}
+
+.icon {
+  width: 50px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-right: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon.telegram {
+  padding: 8px 9px 8px 8px;
+  content: url(/icons/telegramLogo.png);
+}
+.icon.instagram {
+  padding: 6px;
+  content: url(/icons/instagramLogo.png);
+}
+.icon.whatsapp {
+  padding: 6px;
+  content: url(/icons/whatsappLogo.png);
+}
+.icon.gmail {
+  padding: 8px;
+  content: url(/icons/gmailLogo.png);
+}
+.icon:hover {
+  background: #4824ff;
+  filter: drop-shadow(0px 0px 35px #4824ff);
+}
+
+html[data-theme=dark] .icon {
+  filter: invert(1);
+}
+
+html[data-theme=dark] .icon:hover {
+  filter: invert(0) drop-shadow(0px 0px 35px #4824ff);
+}/*# sourceMappingURL=contact.module.css.map */

@@ -1,0 +1,22 @@
+.backToTop {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  width: 80px;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.4s ease;
+}
+.backToTop__hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+.backToTop__visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.backToTop__visible:hover {
+  filter: drop-shadow(0 0 35px #4824ff);
+}/*# sourceMappingURL=backtotopbutton.module.css.map */
