@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./fonts/Onest-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./fonts/Onest-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./fonts/Onest-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium  */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./fonts/Onest-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Onest';
+    src: url('./fonts/Onest-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Prata';
+    src: url('./fonts/Prata.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+*::-webkit-scrollbar{
+    width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #4824ff;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #ffffff01;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: clip;
+    margin: 0 5% 0 5%;
+    font-family: "Onest", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--main-background);
+    color: var(--main-text-color);
+}
+
+html[data-theme='light'] {
+    --main-background: white;
+    --main-text-color: black;
+    --switch-background: #eeebff;
+    --main-element-color: #eeebff;
+}
+  
+html[data-theme='dark'] {
+    --main-background: #04001a;
+    --main-text-color: white;
+    --switch-background:#120940;
+    -main-element-color: #4824ff;
+}
+

@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "question_ru": "Сколько хранятся ваши сыры?",
+      "question_en": "How long do your cheeses last?",
+      "answer_ru": "В среднем от 7 до 30 дней в холодильнике, в зависимости от сорта сыра.",
+      "answer_en": "On average, from 7 to 30 days in the fridge, depending on the type of cheese."
+    },
+    {
+      "id": 2,
+      "question_ru": "Можно ли заказать индивидуальный вкус?",
+      "question_en": "Can I request a custom flavor?",
+      "answer_ru": "Конечно! Свяжитесь со мной через Telegram, и обсудим детали.",
+      "answer_en": "Of course! Contact me via Telegram and we'll discuss the details."
+    },
+    {
+      "id": 3,
+      "question_ru": "Какие ингредиенты вы используете?",
+      "question_en": "What ingredients do you use?",
+      "answer_ru": "Только натуральные: молоко, закваски, ферменты и специи. Без консервантов и добавок.",
+      "answer_en": "Only natural ones: milk, starter cultures, enzymes and spices. No preservatives or additives."
+    },
+    {
+      "id": 4,
+      "question_ru": "Сколько времени занимает изготовление сыра?",
+      "question_en": "How long does cheese production take?",
+      "answer_ru": "От 3 до 14 дней, в зависимости от сорта и степени выдержки.",
+      "answer_en": "From 3 to 14 days depending on the type and maturity of the cheese."
+    },
+    {
+      "id": 5,
+      "question_ru": "Где производится сыр?",
+      "question_en": "Where is the cheese made?",
+      "answer_ru": "Все сыры я готовлю самостоятельно в оборудованной домашней сыроварне, соблюдая санитарные нормы.",
+      "answer_en": "I make all cheeses myself in a well-equipped home creamery, following sanitary standards."
+    }
+  ]
+  

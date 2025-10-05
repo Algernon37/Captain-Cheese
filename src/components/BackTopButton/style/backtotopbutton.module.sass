@@ -1,0 +1,21 @@
+.backToTop
+    position: fixed
+    right: 50px
+    bottom: 100px
+    width: 80px
+    cursor: pointer
+    z-index: 999
+    transition: all 0.4s ease
+
+    &__hidden
+        opacity: 0
+        transform: translateY(20px)
+        pointer-events: none
+
+    &__visible
+        opacity: 1
+        transform: translateY(0)
+        pointer-events: auto
+
+        &:hover
+            filter: drop-shadow(0 0 35px #4824ff)
