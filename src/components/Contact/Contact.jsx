@@ -22,9 +22,9 @@ const Contact = () => {
         </p>
         <div className={style.contactsBlock__social}>
           <a href="https://t.me/capcheese" target="_blank" className={`${style.icon} ${style.telegram}`} />
-          <a href="https://t.me/capcheese" target="_blank" className={`${style.icon} ${style.instagram}`} />
-          <a href="https://t.me/capcheese" target="_blank" className={`${style.icon} ${style.whatsapp}`} />
-          <a href="https://t.me/capcheese" target="_blank" className={`${style.icon} ${style.gmail}`} />
+          <a href="https://www.instagram.com/cap.cheeses" target="_blank" className={`${style.icon} ${style.instagram}`} />
+          <a href="https://wa.me/995599226770" target="_blank" className={`${style.icon} ${style.whatsapp}`} />
+          <a href="mailto:pliner.irina.1@gmail.com" target="_blank" className={`${style.icon} ${style.gmail}`} />
         </div>
       </div>
     </div>
