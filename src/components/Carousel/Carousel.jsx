@@ -41,20 +41,25 @@ const Carousel = ({ direction }) => {
     return () => cancelAnimationFrame(requestIdRef.current);
   }, [direction, isHovered]);
 
+  const getFileName = (v) => (v || "").split("/").pop() || "";
+
+  const resolveImageSrc = (imageField) => {
+    const file = getFileName(imageField);                 
+    const key  = `../../assets/all/${file}`;              
+    return images[key] || "";
+  };
+
   const handleImageClick = (cheese) => {
+    const src = resolveImageSrc(cheese.image);           
     setSelectedCheese({
       ...cheese,
+      image: src,                                        
       title: lang === "en" ? cheese.title_en || cheese.title : cheese.title,
       description:
         lang === "en"
           ? cheese.description_en || cheese.description
           : cheese.description,
     });
-  };
-
-  const resolveImageSrc = (fileName) => {
-    const key = `../../assets/all/${fileName}`;
-    return images[key] || "";
   };
 
   const renderImages = () =>
@@ -89,4 +94,5 @@ const Carousel = ({ direction }) => {
 };
 
 export default Carousel;
+
 
