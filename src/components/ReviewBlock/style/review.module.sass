@@ -52,7 +52,7 @@
         background: #00000050
 
     .arrayNextIcon
-        content: url("icons/arrowRight.png")
+        content: url("/icons/arrowRight.png")
         scale: 0.7
         height: 80px
         padding: 15px
@@ -94,30 +94,20 @@
         filter: drop-shadow(0px 0px 25px #4824ff90)
 
 .reviewBlock .telegramIcon
-  margin: -7px -4px
-  padding: 0
-  background: none
-
-.reviewBlock .telegramIcon::before
-  content: ""                            
-  display: inline-block
-  width: 30px
-  height: 30px
-  background: url("/icons/BlueTelegram.png") no-repeat center/contain
-  transform: scale(.84)
+    margin: -7px -4px
+    padding: 0
+    content: url("/icons/BlueTelegram.png")
+    background: none
+    scale: 0.84
+    height: 30px
 
 .reviewBlock .arrayCornerIcon
-  margin: -6px -18px
-  padding: 0
-  background: none
-
-.reviewBlock .arrayCornerIcon::before
-  content: ""
-  display: inline-block
-  width: 55px
-  height: 55px
-  background: url("/icons/arrayCornerIcon.png") no-repeat center/contain
-  transform: scale(.37)
+    margin: -6px -18px
+    padding: 0
+    content: url("/icons/arrayCornerIcon.png")
+    background: none
+    scale: 0.37
+    height: 55px
 
 html[data-theme='dark'] .reviewContent 
     background: var(--main-background)
