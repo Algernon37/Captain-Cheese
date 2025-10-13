@@ -5,7 +5,8 @@ import Review from './Review';
 
 const ReviewBlock = () => {
   const containerRef = useRef(null);
-  const itemStrideRef = useRef(0); 
+  const strideRef = useRef(0);
+  const snapTimerRef = useRef(null);
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
 
@@ -21,87 +22,113 @@ const ReviewBlock = () => {
       text_en: 'Review text left by the client in the Telegram channel, which you can open by clicking the button in the upper right corner of this block.' },
   ];
 
-  const VISIBLE = 3;      
+  const VISIBLE = 3;
   const LOOPS = 3;
 
   const data = useMemo(() => {
     const head = reviews.slice(0, VISIBLE);
     const tail = reviews.slice(-VISIBLE);
-    const mid = Array.from({ length: LOOPS }).flatMap(() => reviews);
+    const mid  = Array.from({ length: LOOPS }).flatMap(() => reviews);
+    // tail | mid | mid | head
     return [...tail, ...mid, ...mid, ...head];
   }, []);
 
-  const handleScroll = useCallback(() => {
+  const calcStride = useCallback(() => {
     const box = containerRef.current;
-    const stride = itemStrideRef.current;
-    if (!box || !stride) return;
-
-    const page = stride * VISIBLE;
-    if (box.scrollLeft <= 0) {
-      box.style.scrollBehavior = 'auto';
-      box.scrollLeft = box.scrollWidth - 2 * page;
-      box.style.scrollBehavior = 'smooth';
-    } else if (box.scrollLeft >= box.scrollWidth - page) {
-      box.style.scrollBehavior = 'auto';
-      box.scrollLeft = page;
-      box.style.scrollBehavior = 'smooth';
-    }
-  }, []);
-
-  const measureAndCenter = useCallback(() => {
-    const box = containerRef.current;
-    if (!box) return;
-
+    if (!box) return 0;
     const cards = box.querySelectorAll(`.${style.reviewCard}`);
-    if (!cards.length) return;
+    if (!cards.length) return 0;
 
-   
     let stride = cards[0].clientWidth;
     if (cards[1]) {
       const a = cards[0].getBoundingClientRect();
       const b = cards[1].getBoundingClientRect();
-      stride = b.left - a.left; 
-    } else {
-      const cs = getComputedStyle(cards[0]);
-      stride += parseFloat(cs.marginLeft) + parseFloat(cs.marginRight);
+      stride = b.left - a.left; // включает межкарточный зазор, если есть
     }
-    itemStrideRef.current = Math.round(stride);
+    return Math.round(stride);
+  }, []);
 
-    const page = itemStrideRef.current * VISIBLE;
+  // жёсткое приведение к ближайшей «ячейке»
+  const snapToGrid = useCallback(() => {
+    const box = containerRef.current;
+    const stride = strideRef.current;
+    if (!box || !stride) return;
+    const idx = Math.round(box.scrollLeft / stride);
     box.style.scrollBehavior = 'auto';
-    box.scrollLeft = (box.scrollWidth - page) / 2;
+    box.scrollLeft = idx * stride;
     box.style.scrollBehavior = 'smooth';
   }, []);
 
-  const prev = () => {
+ 
+  const onScroll = useCallback(() => {
     const box = containerRef.current;
-    if (!box) return;
-    box.scrollLeft -= itemStrideRef.current;
-  };
-  const next = () => {
-    const box = containerRef.current;
-    if (!box) return;
-    box.scrollLeft += itemStrideRef.current;
-  };
+    const stride = strideRef.current;
+    if (!box || !stride) return;
 
+    const R = reviews.length;
+    const startIdx = VISIBLE + R * LOOPS;                 
+    const minIdx   = VISIBLE;                              
+    const maxIdx   = VISIBLE + R * LOOPS * 2 - 1;          
+    let idx = Math.round(box.scrollLeft / stride);
+
+    if (idx < minIdx) {
+      idx += R * LOOPS; 
+      box.style.scrollBehavior = 'auto';
+      box.scrollLeft = idx * stride;
+      box.style.scrollBehavior = 'smooth';
+    } else if (idx > maxIdx) {
+      idx -= R * LOOPS; 
+      box.style.scrollBehavior = 'auto';
+      box.scrollLeft = idx * stride;
+      box.style.scrollBehavior = 'smooth';
+    }
+
+    clearTimeout(snapTimerRef.current);
+    snapTimerRef.current = setTimeout(snapToGrid, 120);
+  }, [snapToGrid]);
+
+
+  const measureAndCenter = useCallback(() => {
+    const box = containerRef.current;
+    if (!box) return;
+    const stride = calcStride();
+    if (!stride) return;
+    strideRef.current = stride;
+
+    const R = reviews.length;
+    const startIdx = VISIBLE + R * LOOPS; 
+    const target = startIdx * stride;
+
+    box.style.scrollBehavior = 'auto';
+    box.scrollLeft = target;
+    box.style.scrollBehavior = 'smooth';
+  }, [calcStride]);
+
+
+  const scrollBySteps = (steps) => {
+    const box = containerRef.current;
+    const stride = strideRef.current;
+    if (!box || !stride) return;
+    const idx = Math.round(box.scrollLeft / stride) + steps;
+    box.scrollTo({ left: idx * stride, behavior: 'smooth' });
+  };
 
   useLayoutEffect(() => {
     const box = containerRef.current;
     if (!box) return;
 
     measureAndCenter();
-    box.addEventListener('scroll', handleScroll, { passive: true });
-
-    const onResize = () => measureAndCenter();
+    box.addEventListener('scroll', onScroll, { passive: true });
+    const onResize = () => { measureAndCenter(); snapToGrid(); };
     window.addEventListener('resize', onResize);
 
     return () => {
-      box.removeEventListener('scroll', handleScroll);
+      box.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onResize);
+      clearTimeout(snapTimerRef.current);
     };
-  }, [measureAndCenter, handleScroll]);
+  }, [measureAndCenter, onScroll, snapToGrid]);
 
-  
   useEffect(() => {
     measureAndCenter();
   }, [lang, measureAndCenter]);
@@ -135,10 +162,10 @@ const ReviewBlock = () => {
         </div>
 
         <div className="flex justify-center gap-6 py-4">
-          <button className={style.nextButton} onClick={prev}>
+          <button className={style.nextButton} onClick={() => scrollBySteps(-1)}>
             <span className={`${style.arrayNextIcon} rotate-180`} />
           </button>
-          <button className={style.nextButton} onClick={next}>
+          <button className={style.nextButton} onClick={() => scrollBySteps(1)}>
             <span className={style.arrayNextIcon} />
           </button>
         </div>
@@ -148,6 +175,7 @@ const ReviewBlock = () => {
 };
 
 export default ReviewBlock;
+
 
 
 

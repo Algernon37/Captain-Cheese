@@ -5,53 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Captain Cheese</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="google-site-verification" content="qRbe2EiNCDj2PaxEgjzxMZlUtThN6BIEZODKU9GshsQ" />
     <style>
-      :root{
-        --cc-bg:#0a0913; --cc-brand:#4824ff; --cc-card:#0f0e19; --cc-text:#fff;
+      :root {
+        --cc-bg: #0a0913;
+        --cc-card: #0f0e19;
+        --cc-text: #fff;
       }
-      #preloader{
-        position:fixed; inset:0; z-index:9999;
-        display:grid; place-items:center;
+
+      #preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
         background: radial-gradient(1100px 500px at 50% -10%, rgba(72,36,255,.15), transparent 60%), var(--cc-bg);
-        transition:opacity .45s ease;
+        transition: opacity 0.45s ease;
       }
-      #preloader.cc-hide{ opacity:0; pointer-events:none; }
 
-      #preloader .cc-card{
-        width:min(460px,88vw); padding:28px 28px 24px; border-radius:24px;
-        background:var(--cc-card);
-        box-shadow:0 10px 40px rgba(0,0,0,.35), 0 0 60px rgba(72,36,255,.25) inset;
-        text-align:center;
+      #preloader.cc-hide {
+        opacity: 0;
+        pointer-events: none;
       }
-      .cc-title{ margin-top:14px; font:700 22px/1.2 system-ui, -apple-system, Segoe UI, Roboto, "Onest", sans-serif; color:var(--cc-text); letter-spacing:.3px; }
-      .cc-sub{ margin-top:6px; font:500 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto, "Onest", sans-serif; color:rgba(255,255,255,.7); }
 
-      .cc-cheese{ width:110px; height:110px; display:block; margin:0 auto; }
-      .cc-cheese .ring{ fill:none; stroke:rgba(255,255,255,.1); stroke-width:6; transform-origin:60px 60px; animation:ring 1.4s ease-in-out infinite; filter:drop-shadow(0 0 10px rgba(72,36,255,.2)); }
-      .cc-cheese .slice{ fill:#ffd65a; transform-origin:60px 60px; animation:spin 1.2s linear infinite; filter:drop-shadow(0 6px 10px rgba(0,0,0,.25)); }
-      .cc-cheese .hole{ fill:#ffc83d; opacity:.85; }
-      @keyframes spin{ to{ transform:rotate(360deg); } }
-      @keyframes ring{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.04);} }
+      .cc-card {
+        width: min(360px, 88vw);
+        padding: 40px 30px;
+        border-radius: 24px;
+        background: var(--cc-card);
+        box-shadow: 0 10px 40px rgba(0,0,0,.35), 0 0 60px rgba(72,36,255,.25) inset;
+        text-align: center;
+      }
+
+      .cc-logo {
+        width: 96px;
+        height: 96px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+        animation: spin 3s linear infinite;
+        filter: drop-shadow(0 0 18px rgba(72,36,255,.4));
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      .cc-title {
+        margin-top: 18px;
+        font: 700 22px/1.2 system-ui, -apple-system, Segoe UI, Roboto, "Onest", sans-serif;
+        color: var(--cc-text);
+        letter-spacing: .3px;
+      }
+
+      .cc-sub {
+        margin-top: 6px;
+        font: 500 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto, "Onest", sans-serif;
+        color: rgba(255,255,255,.7);
+      }
     </style>
-  <meta name="google-site-verification" content="qRbe2EiNCDj2PaxEgjzxMZlUtThN6BIEZODKU9GshsQ" />
-</head>
+  </head>
+
   <body>
     <div id="preloader">
       <div class="cc-card">
-        <svg class="cc-cheese" viewBox="0 0 120 120" aria-hidden="true">
-          <ellipse cx="60" cy="95" rx="28" ry="8" opacity=".15"/>
-          <circle cx="60" cy="60" r="38" class="ring"/>
-          <path class="slice" d="M60 22 A38 38 0 1 1 28 42 L60 60 Z"/>
-          <circle cx="80" cy="52" r="4" class="hole"/>
-          <circle cx="69" cy="69" r="5" class="hole"/>
-          <circle cx="48" cy="56" r="3" class="hole"/>
-        </svg>
+        <img src="/favicon-96x96.png" alt="Captain Cheese Logo" class="cc-logo" />
         <div class="cc-title">Captain&nbsp;Cheese</div>
-        <div class="cc-sub">loading</div>
+        <div class="cc-sub">Загрузка...</div>
       </div>
     </div>
     <div id="root"></div>
@@ -63,7 +85,9 @@
         p.addEventListener('transitionend', () => p.remove(), { once: true });
       };
     </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
 

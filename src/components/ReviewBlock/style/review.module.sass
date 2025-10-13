@@ -28,18 +28,18 @@
   max-width: 100%
   margin: 0 auto
   overflow: hidden
-  scrollbar-gutter: stable 
+
 
 .reviewContainer
   display: flex
   overflow-x: auto
   scroll-behavior: smooth
-  justify-content: flex-start
   -webkit-overflow-scrolling: touch
+  scroll-snap-type: x mandatory  
 
 .reviewCard
   flex: 0 0 420px        
-  
+  scroll-snap-align: start 
 
 .reviewContent
   width: 384px           
