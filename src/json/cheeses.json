@@ -81,175 +81,85 @@
     "image": "1-9.jpg"
   },
   {
-    "name": "2-10",
+    "name": "1-10",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-10.jpg"
+    "image": "1-10.jpg"
   },
   {
-    "name": "2-11",
+    "name": "1-11",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-11.jpg"
+    "image": "1-11.jpg"
   },
   {
-    "name": "2-12",
+    "name": "1-12",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-12.jpg"
+    "image": "1-12.jpg"
   },
   {
-    "name": "2-13",
+    "name": "1-13",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-13.jpg"
+    "image": "1-13.jpg"
   },
   {
-    "name": "2-14",
+    "name": "1-14",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-14.jpg"
+    "image": "1-14.jpg"
   },
   {
-    "name": "2-15",
+    "name": "1-24",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-26.jpg"
+    "image": "1-24.jpg"
   },
   {
-    "name": "2-16",
+    "name": "1-25",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "2-27.jpg"
+    "image": "1-25.jpg"
   },
   {
-    "name": "3-17",
-    "title": "Чизкейк",
-    "title_en": "Cheesecake",
-    "description": "Очень вкусный домашний чизкейк для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheesecake for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "3-20.jpg"
-  },
-  {
-    "name": "3-18",
-    "title": "Чизкейк",
-    "title_en": "Cheesecake",
-    "description": "Очень вкусный домашний чизкейк для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheesecake for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "3-21.jpg"
-  },
-  {
-    "name": "3-20",
-    "title": "Чизкейк",
-    "title_en": "Cheesecake",
-    "description": "Очень вкусный домашний чизкейк для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheesecake for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "3-22.jpg"
-  },
-  {
-    "name": "3-21",
-    "title": "Чизкейк",
-    "title_en": "Cheesecake",
-    "description": "Очень вкусный домашний чизкейк для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheesecake for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "3-23.jpg"
-  },
-  {
-    "name": "4-22",
+    "name": "1-26",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "4-11.jpg"
+    "image": "1-26.jpg"
   },
   {
-    "name": "4-23",
+    "name": "1-27",
     "title": "Сыр",
     "title_en": "Cheese",
     "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
     "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
     "price": 150,
-    "image": "4-15.jpg"
-  },
-  {
-    "name": "4-24",
-    "title": "Сыр",
-    "title_en": "Cheese",
-    "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "4-16.jpg"
-  },
-  {
-    "name": "4-25",
-    "title": "Сыр",
-    "title_en": "Cheese",
-    "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "4-17.jpg"
-  },
-  {
-    "name": "4-26",
-    "title": "Сыр",
-    "title_en": "Cheese",
-    "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "4-18.jpg"
-  },
-  {
-    "name": "4-27",
-    "title": "Сыр",
-    "title_en": "Cheese",
-    "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "4-19.jpg"
-  },
-  {
-    "name": "4-28",
-    "title": "Сыр",
-    "title_en": "Cheese",
-    "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "4-24.jpg"
-  },
-  {
-    "name": "4-29",
-    "title": "Сыр",
-    "title_en": "Cheese",
-    "description": "Очень вкусный домашний сыр для вашего стола. Натуральный и очень питательный!",
-    "description_en": "Delicious homemade cheese for your table. Natural and very nutritious!",
-    "price": 150,
-    "image": "4-25.jpg"
+    "image": "1-27.jpg"
   }
 ]
 

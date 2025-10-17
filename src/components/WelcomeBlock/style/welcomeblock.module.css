@@ -1,0 +1,138 @@
+@charset "UTF-8";
+.welcomeBlock {
+  height: 650px;
+  display: flex;
+  place-items: center;
+  margin-top: 50px;
+}
+.welcomeBlock h1 {
+  font-size: 50px;
+}
+.welcomeBlock h2 {
+  font-size: 38px;
+  font-weight: 450;
+}
+.welcomeBlock h3 {
+  font-size: 25px;
+  font-weight: 300;
+}
+.welcomeBlock .firstBlock {
+  align-content: center;
+  width: 55%;
+}
+
+.title {
+  background: linear-gradient(to right, #4824ff, #4824ff, #85ebff, #eeebff, #85aeff, #4824ff, #4824ff);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: gradientAnimation 5s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 200% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.mainImageBox {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.firstImageLayer {
+  width: 100%;
+  display: block;
+}
+
+.secondImageLayer {
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 500px;
+  height: auto;
+  animation: bouncing 5s linear infinite;
+}
+
+.thirdImageLayer {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  top: 60%;
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+/* Tablet: 768–1024 px */
+@media (min-width: 768px) and (max-width: 1190px) {
+  .welcomeBlock {
+    height: auto;
+    margin-top: 36px;
+    padding: 0 16px;
+    gap: 24px;
+    align-items: center;
+  }
+  .welcomeBlock h1 {
+    font-size: 40px;
+  }
+  .welcomeBlock h2 {
+    font-size: 25px;
+    font-weight: 450;
+  }
+  .welcomeBlock h3 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .welcomeBlock .firstBlock {
+    width: 60%;
+  }
+  .mainImageBox {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .firstImageLayer {
+    width: 100%;
+  }
+  .secondImageLayer {
+    top: -6%;
+    left: 15%;
+    width: 360px;
+    height: auto;
+    animation: bouncing 6s ease-in-out infinite;
+  }
+  .thirdImageLayer {
+    top: 56%;
+    left: 8px;
+    max-width: 560px;
+    height: 280px;
+    width: 100%;
+  }
+  @keyframes bouncing {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}/*# sourceMappingURL=welcomeblock.module.css.map */

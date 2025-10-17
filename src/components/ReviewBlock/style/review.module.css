@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .reviewBlock {
   min-height: 500px;
   background: #4824ff;
@@ -13,6 +14,7 @@
   color: white;
   text-align: center;
   margin-bottom: 25px;
+  padding: 0 20px;
   font-size: 22px;
   line-height: 32px;
 }
@@ -23,22 +25,42 @@
   font-weight: 500;
 }
 
+/* ----- КАРУСЕЛЬ ----- */
 .reviewCarousel {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 100%;
-  max-width: 1260px;
+  width: 1260px;
+  max-width: 100%;
+  margin: 0 auto;
   overflow: hidden;
 }
 
 .reviewContainer {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
-  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
+.reviewCard {
+  flex: 0 0 420px;
+  scroll-snap-align: start;
+}
+
+.reviewContent {
+  width: 384px;
+  margin: 0 auto;
+  background: var(--main-background);
+  border-radius: 24px;
+}
+
+.reviewBlock .review {
+  margin-top: auto;
+  font-size: 19px;
+  line-height: 27px;
+  width: 90%;
+}
+
+/* ----- КНОПКИ ----- */
 .nextButton {
   width: 55px;
   height: 55px;
@@ -54,7 +76,7 @@
   background: rgba(0, 0, 0, 0.3137254902);
 }
 .nextButton .arrayNextIcon {
-  content: url("icons/arrowRight.png");
+  content: url("/icons/arrowRight.png");
   scale: 0.7;
   height: 80px;
   padding: 15px;
@@ -63,25 +85,7 @@
   filter: invert(100%);
 }
 
-.reviewCard {
-  flex: 0 0 auto;
-  min-width: 420px;
-}
-
-.reviewContent {
-  width: 384px;
-  background: var(--main-background);
-  border-radius: 24px;
-  margin: 0 18px;
-}
-
-.reviewBlock .review {
-  margin-top: auto;
-  font-size: 19px;
-  line-height: 27px;
-  width: 90%;
-}
-
+/* ----- ИКОНКИ В КАРТОЧКЕ ----- */
 .reviewBlock .link {
   display: flex;
   align-items: center;
@@ -97,13 +101,13 @@
 }
 .reviewBlock .link:hover {
   border: 2px double #4824ff;
-  filter: drop-shadow(0px 0px 25px rgba(72, 36, 255, 0.5647058824));
+  filter: drop-shadow(0 0 25px rgba(72, 36, 255, 0.5647058824));
 }
 
 .reviewBlock .telegramIcon {
   margin: -7px -4px;
   padding: 0;
-  content: url("icons/BlueTelegram.png");
+  content: url("/icons/BlueTelegram.png");
   background: none;
   scale: 0.84;
   height: 30px;
@@ -112,7 +116,7 @@
 .reviewBlock .arrayCornerIcon {
   margin: -6px -18px;
   padding: 0;
-  content: url("icons/arrayCornerIcon.png");
+  content: url("/icons/arrayCornerIcon.png");
   background: none;
   scale: 0.37;
   height: 55px;
@@ -130,17 +134,62 @@ html[data-theme=dark] .arrayCornerIcon {
   filter: invert(1);
 }
 
-@media (min-width: 1024px) and (max-width: 1390px) {
+@media (min-width: 1024px) and (max-width: 1399px) {
   .reviewCarousel {
-    max-width: 850px;
-    width: 100%;
-    margin: 0 auto;
+    width: 840px;
   }
 }
 @media (max-width: 1023px) {
   .reviewCarousel {
-    max-width: 420px;
-    width: 100%;
+    width: 420px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .reviewBlock {
+    min-height: 420px;
+    border-radius: 24px;
+    padding: 30px 0;
+  }
+  .reviewBlock h1 {
+    font-size: 40px;
+    padding-top: 20px;
+  }
+  .reviewBlock .description {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+  }
+  /* --- ровно 2 карточки --- */
+  .reviewCarousel {
+    width: 720px;
+    max-width: 100%;
     margin: 0 auto;
+    overflow: hidden;
+  }
+  .reviewContainer {
+    gap: 0;
+    scroll-snap-type: x mandatory;
+  }
+  .reviewCard {
+    flex: 0 0 360px;
+    scroll-snap-align: start;
+  }
+  .reviewContent {
+    width: 340px;
+    border-radius: 20px;
+  }
+  .reviewBlock .review {
+    font-size: 17px;
+    line-height: 25px;
+  }
+  .nextButton {
+    width: 48px;
+    height: 48px;
+  }
+  .nextButton .arrayNextIcon {
+    scale: 0.65;
+    height: 60px;
+    padding: 12px;
   }
 }/*# sourceMappingURL=review.module.css.map */

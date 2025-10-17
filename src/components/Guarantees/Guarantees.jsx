@@ -6,7 +6,7 @@ const Guarantees = () => {
 
   return (
     <div className={style.guaranteesBlock} id="Guarantees">
-      <h1 className="text-[52px] pb-[20px]">
+      <h1 className={style.guaranteesTitle}>
         {t('guarantees.title')}
       </h1>
       <ol className={style.guaranteesPoints}>

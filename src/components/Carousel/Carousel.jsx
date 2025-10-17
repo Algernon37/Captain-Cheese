@@ -4,10 +4,23 @@ import style from "./style/carousel.module.sass";
 import ModalCheeseWindow from "../ModalCheeseWindow/ModalCheeseWindow";
 import cheeseData from "../../json/cheeses.json";
 
-const images = import.meta.glob("../../assets/all/*", {
-  eager: true,
-  as: "url",
-});
+
+const images = import.meta.glob(
+  "../../assets/all/*.{png,jpg,jpeg,JPG,PNG,webp,avif}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
+
+
+const IMAGE_MAP = Object.fromEntries(
+  Object.entries(images).map(([key, url]) => {
+    const fileName = key.split("/").pop()?.toLowerCase() ?? "";
+    return [fileName, url];
+  })
+);
 
 const Carousel = ({ direction }) => {
   const carouselRef = useRef(null);
@@ -41,19 +54,19 @@ const Carousel = ({ direction }) => {
     return () => cancelAnimationFrame(requestIdRef.current);
   }, [direction, isHovered]);
 
-  const getFileName = (v) => (v || "").split("/").pop() || "";
-
-  const resolveImageSrc = (imageField) => {
-    const file = getFileName(imageField);                 
-    const key  = `../../assets/all/${file}`;              
-    return images[key] || "";
+  const resolveImageSrc = (fileName) => {
+    const name = (fileName || "").split("/").pop()?.toLowerCase();
+    const url = IMAGE_MAP[name];
+    if (!url)
+      console.warn("[Carousel] image not found:", name, "in", Object.keys(IMAGE_MAP));
+    return url || "";
   };
 
   const handleImageClick = (cheese) => {
-    const src = resolveImageSrc(cheese.image);           
+    const src = resolveImageSrc(cheese.image);
     setSelectedCheese({
       ...cheese,
-      image: src,                                        
+      image: src,
       title: lang === "en" ? cheese.title_en || cheese.title : cheese.title,
       description:
         lang === "en"
@@ -63,9 +76,9 @@ const Carousel = ({ direction }) => {
   };
 
   const renderImages = () =>
-    [...cheeseData, ...cheeseData].map((cheese, index) => (
+    [...cheeseData, ...cheeseData].map((cheese, i) => (
       <img
-        key={`${cheese.name}-${index}`}
+        key={`${cheese.name}-${i}`}
         src={resolveImageSrc(cheese.image)}
         alt={lang === "en" ? cheese.title_en : cheese.title}
         className={style.carouselImage}
@@ -94,5 +107,4 @@ const Carousel = ({ direction }) => {
 };
 
 export default Carousel;
-
 

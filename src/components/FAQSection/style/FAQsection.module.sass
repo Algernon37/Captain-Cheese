@@ -7,6 +7,10 @@
   background-size: cover
   background-position: center
 
+.faqTitle
+    font-size: 52px
+    text-align: center
+    margin-bottom: 2rem
 
 .faqContent
     width: 768px
@@ -41,3 +45,29 @@ html[data-theme='dark'] .crossIcon
 
 html[data-theme='dark'] .answer
     color: white
+
+@media (min-width: 768px) and (max-width: 1024px)
+  .faqBlock
+
+    .faqTitle
+        font-size: 42px
+        margin-bottom: 1.5rem
+        text-align: center
+
+  .faqContent
+    width: 85vw
+    border-radius: 22px
+    padding: 20px
+    overflow: hidden
+
+    &::before
+      filter: blur(6px)
+
+  .answer
+    font-size: 18px
+    line-height: 1.5
+    margin-top: 0.75rem
+
+  .crossIcon
+    width: 26px
+    height: 26px

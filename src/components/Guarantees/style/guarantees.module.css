@@ -3,6 +3,11 @@
   padding-top: 200px;
 }
 
+.guaranteesTitle {
+  font-size: 52px;
+  padding-bottom: 20px;
+}
+
 .guaranteesPoints {
   list-style-type: none;
   padding-left: 20px;
@@ -18,7 +23,7 @@
   transform: translateY(-10%);
   width: 40px;
   height: 40px;
-  background-image: url(icons/mark.png);
+  background-image: url(/icons/mark.png);
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: -20px;
@@ -26,4 +31,14 @@
 
 .point {
   margin-top: 35px;
+}
+
+.guaranteesTitle {
+  font-size: 42px;
+  padding-bottom: 15px;
+}
+
+.guaranteesBlock {
+  font-size: 20px;
+  padding-top: 200px;
 }/*# sourceMappingURL=guarantees.module.css.map */

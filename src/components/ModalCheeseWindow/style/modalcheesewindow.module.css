@@ -1,47 +1,52 @@
-.modalBackdrop {
+.modalWindowImage {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
   justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
   z-index: 1000;
 }
-.modalBackdrop.show {
-  opacity: 1;
-  visibility: visible;
-}
-.modalBackdrop.show .modalContent {
-  transform: translateY(0);
+
+.modalImage {
+  max-width: 40vw;
+  max-height: 40vh;
+  border-radius: 10px;
+  z-index: 1000;
 }
 
-.modalContent {
-  position: relative;
+.cheseInfo {
+  display: flex;
+  justify-content: center;
   background: white;
   padding: 40px;
   border-radius: 16px;
-  width: 500px;
-  height: 285px;
-  transform: translateY(-50px);
-  transition: transform 0.5s ease-in-out;
-  z-index: 1001;
+  width: 40vw;
 }
-
-html[data-theme=dark] .modalContent {
-  color: black;
+.cheseInfo__price {
+  background: linear-gradient(to right, #4824ff, #4824ff, #85ebff, #eeebff, #85aeff, #4824ff, #4824ff);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: gradientAnimation 3s linear infinite;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 200% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .modelCloseButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50px;
+  position: relative;
+  width: 55px;
   height: 50px;
   background: none;
   border: none;
@@ -54,8 +59,6 @@ html[data-theme=dark] .modalContent {
 .modelCloseButton::before, .modelCloseButton::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 30px;
   height: 2px;
   background-color: #333;
@@ -90,7 +93,7 @@ html[data-theme=dark] .modalContent {
 }
 .socialButton:hover {
   background: #4824ff;
-  filter: drop-shadow(0px 0px 10px #4824ff);
+  filter: drop-shadow(0px 0px 35px rgba(72, 36, 255, 0.2509803922));
   color: #eeebff;
 }
 
@@ -101,28 +104,26 @@ html[data-theme=dark] .modalContent {
   content: url(/icons/telegramLogo.png);
 }
 
-.social.instagram {
-  width: 33px;
-  height: 33px;
-  margin-right: 8px;
-  content: url(/icons/instagramLogo.png);
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
-  .modalContent {
-    width: 400px;
-    height: auto;
-    padding: 30px;
+  .modalWindowImage {
+    padding: 20px;
+  }
+  .modalImage {
+    max-width: 55vw;
+    max-height: 42vh;
+    border-radius: 12px;
+  }
+  .cheseInfo {
+    width: 60vw;
+    padding: 32px;
     border-radius: 14px;
   }
   .modelCloseButton {
-    top: 16px;
-    right: 16px;
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
   }
   .modelCloseButton::before, .modelCloseButton::after {
-    width: 26px;
+    width: 24px;
   }
   .socialButton {
     width: 200px;
@@ -134,9 +135,4 @@ html[data-theme=dark] .modalContent {
     height: 22px;
     margin-right: 8px;
   }
-  .social.instagram {
-    width: 30px;
-    height: 30px;
-    margin-right: 6px;
-  }
-}/*# sourceMappingURL=modalwindow.module.css.map */
+}/*# sourceMappingURL=modalcheesewindow.module.css.map */

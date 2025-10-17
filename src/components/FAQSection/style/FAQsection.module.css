@@ -1,11 +1,17 @@
 .faqBlock {
   display: flex;
   justify-content: center;
-  background: url(images/BackgroundContacts.png);
-  padding: 150px 0px 150px 0px;
-  margin: 200px -5vw 0px -5vw;
+  background: url("/images/BackgroundContacts.png");
+  padding: 150px 0;
+  margin: 200px -5vw 0 -5vw;
   background-size: cover;
   background-position: center;
+}
+
+.faqTitle {
+  font-size: 52px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .faqContent {
@@ -45,4 +51,38 @@ html[data-theme=dark] .crossIcon {
 
 html[data-theme=dark] .answer {
   color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .faqBlock {
+    padding: 100px 0;
+    margin: 150px -3vw 0 -3vw;
+    background-size: contain;
+    background-position: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .faqBlock .faqTitle {
+    font-size: 42px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .faqContent {
+    width: 85vw;
+    border-radius: 22px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .faqContent::before {
+    filter: blur(6px);
+  }
+  .answer {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+  }
+  .crossIcon {
+    width: 26px;
+    height: 26px;
+  }
 }/*# sourceMappingURL=FAQsection.module.css.map */

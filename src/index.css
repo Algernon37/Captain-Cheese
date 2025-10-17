@@ -73,6 +73,7 @@ html[data-theme='light'] {
     --main-text-color: black;
     --switch-background: #eeebff;
     --main-element-color: #eeebff;
+    --cow-icon: url("/icons/cow.png");
 }
   
 html[data-theme='dark'] {
@@ -80,5 +81,6 @@ html[data-theme='dark'] {
     --main-text-color: white;
     --switch-background:#120940;
     -main-element-color: #4824ff;
+    --cow-icon: url("/icons/cowWhite.png");
 }
 

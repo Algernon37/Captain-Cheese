@@ -13,6 +13,7 @@
     color: white
     text-align: center
     margin-bottom: 25px 
+    padding: 0 20px
     font-size: 22px
     line-height: 32px
 
@@ -126,11 +127,71 @@ html[data-theme='dark'] .arrayCornerIcon
   .reviewCarousel
     width: 840px        
 
-@media (max-width: 1023px)
+
+@media (min-width: 801px) and (max-width: 1024px)
+  .reviewBlock
+    min-height: 420px
+    border-radius: 24px
+    padding: 30px 0
+
+    h1
+      font-size: 40px
+      padding-top: 20px
+
+    .description
+      font-size: 18px
+      line-height: 28px
+      padding: 0 30px
+      margin-bottom: 20px
+
   .reviewCarousel
-    width: 420px
+    width: 720px
+    max-width: 100%
+    margin: 0 auto
+    overflow: hidden
+
+  .reviewContainer
+    gap: 0
+    scroll-snap-type: x mandatory
+
+  .reviewCard
+    flex: 0 0 360px
+    scroll-snap-align: start
+
+  .reviewContent
+    width: 340px
+    border-radius: 20px
+
+  .reviewBlock .review
+    font-size: 17px
+    line-height: 25px
+
+  .nextButton
+    width: 48px
+    height: 48px
+
+    .arrayNextIcon
+      scale: .65
+      height: 60px
+      padding: 12px
 
 
+@media (max-width: 800px)
+  .reviewCarousel
+    width: 360px
+    max-width: 100%
+    margin: 0 auto
+    overflow: hidden
 
+  .reviewCard
+    flex: 0 0 360px
+    scroll-snap-align: center
 
+  .reviewContent
+    width: 340px
+    border-radius: 18px
+
+  .reviewBlock .review
+    font-size: 16px
+    line-height: 24px
 

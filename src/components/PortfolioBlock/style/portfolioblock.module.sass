@@ -1,7 +1,7 @@
 
 .portfolioBlock
     height: auto
-    padding-top: 100px    
+    padding-top: 200px    
 
     & .firstBlock
         display: flex
@@ -16,6 +16,10 @@
         background-clip: text
         color: transparent
         z-index: 1
+    
+    & .subTitle
+        font-size: 24px
+        font-family: 'Prata'
 
     & .arrayIcon
         margin: 0 20px
@@ -88,3 +92,48 @@ html[data-theme='dark'] .mainTitle
         background-position: 200% 50%
     100% 
         background-position: 0% 50%
+
+@media (min-width: 768px) and (max-width: 1024px)
+  .portfolioBlock
+    padding-top: 150px    
+
+    .firstBlock
+      gap: 20px
+
+    .mainTitle
+      font-size: 40px
+
+    .subTitle
+      font-size: 20px
+
+    .arrayIcon
+      width: 45px
+      margin: 0 10px
+
+    .titleBorder
+      font-size: 44px
+      text-shadow: -1px -1px 0 #4824ff20, 1px -1px 0 #4824ff20, -1px 1px 0 #4824ff20, 1px 1px 0 #4824ff20
+
+    .tag
+      font-size: 18px
+      padding: 6px 18px
+      margin-right: 10px
+
+  .gradiantPartOne,
+  .gradiantPartTwo
+    height: 60px
+
+  .gradiantPartOne
+    width: 160px
+
+  .gradiantPartTwo
+    width: 80px
+
+  html[data-theme='dark'] .mainTitle
+    background: linear-gradient(to right, #4824ff,#4824ff, #85ebff,
+            #eeebff, #85aeff, #4824ff,#4824ff)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+    background-size: 200%
+    animation: gradientAnimation 6s linear infinite

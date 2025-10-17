@@ -16,7 +16,7 @@ const FAQSection = () => {
   return (
     <section className={style.faqBlock} id="FAQ">
       <div className={style.faqContent}>
-        <h1 className="text-[52px] text-center mb-8">
+        <h1 className={style.faqTitle}>
           {t('faq.title')}
         </h1>
         <ul className="max-w-3xl mx-auto space-y-4">
