@@ -59,6 +59,29 @@ const Header = () => {
               <a onClick={toggleBurger} href="#Guarantees">{t('menu.guarantees')}</a>
               <a onClick={toggleBurger} href="#FAQ">{t('menu.faq')}</a>
               <a onClick={toggleBurger} href="#Contacts">{t('menu.contacts')}</a>
+
+              {/* Кнопки/иконки/переключатели внутри бургера (видимы только ≤600px) */}
+              <div className={style.menuActions}>
+                <Button onOpen={() => { toggleBurger(); handleOpenModal(); }} />
+                <div className={style.menuActionsRow}>
+                  <a href="https://t.me/capcheese" target="_blank" className={`${style.icon} ${style.telegram}`} />
+                  <a href="https://www.instagram.com/cap.cheeses/" target="_blank" className={`${style.icon} ${style.instagram}`} />
+                </div>
+                <div className={style.menuActionsRow}>
+                  <div className={style.switch} onClick={toggleTheme}>
+                    <div
+                      className={`${style.theme} ${theme === 'light' ? style.light : style.dark}`}
+                      style={{ transform: theme === 'dark' ? 'translateX(33px)' : 'translateX(0)' }}
+                    />
+                  </div>
+                  <div className={style.switch} onClick={toggleLanguage}>
+                    <div
+                      className={`${style.language} ${language === 'en' ? style.languagEn : style.languagRu}`}
+                      style={{ transform: language === 'en' ? 'translateX(33px)' : 'translateX(0)' }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </>
         )}

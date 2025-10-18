@@ -1,77 +1,89 @@
-
 .portfolioBlock
-    height: auto
-    padding-top: 200px    
+  height: auto
+  padding-top: 200px
 
-    & .firstBlock
-        display: flex
-        justify-content: center
-        align-items: center
+.firstBlock
+  display: flex
+  justify-content: center
+  align-items: center
 
-    & .mainTitle
-        font-size: 56px
-        font-family: 'Prata'
-        font-weight: 500
-        background: linear-gradient(to right, black, #4824ff)
-        background-clip: text
-        color: transparent
-        z-index: 1
-    
-    & .subTitle
-        font-size: 24px
-        font-family: 'Prata'
+.mainTitle
+  font-size: 56px
+  font-family: 'Prata'
+  font-weight: 500
+  background: linear-gradient(to right, black, #4824ff)
+  background-clip: text
+  color: transparent
+  z-index: 1
 
-    & .arrayIcon
-        margin: 0 20px
-        padding: 0
-        width: 60px
-        filter: drop-shadow(20px 20px 15px #4824ff25)
+.blockSubTitle
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 12px
+  margin: 24px 0
 
-    & .titleBorder
-        font-size: 56px
-        font-family: 'Prata'
-        font-weight: 500
-        color: white
-        margin: 10px 0
-        text-shadow: -1px -1px 0 #4824ff30, 1px -1px 0 #4824ff30, -1px 1px 0 #4824ff30, 1px 1px 0 #4824ff30
+.subTitle
+  text-align: center
+  font-size: 24px
+  font-family: 'Prata'
 
-    & .tag
-        display: flex
-        font-size: 20px
-        font-weight: 500
-        background: #eeebff
-        color: #4824ff
-        margin-right: 12px
-        padding: 8px 22px 8px 22px
-        border-radius: 24px
-        border: 1px solid #eeebff
-        cursor: pointer
-        transition: 0.5s ease-in-out
+.arrayIcon
+  margin: 0 20px
+  padding: 0
+  width: 60px
+  filter: drop-shadow(20px 20px 15px #4824ff25)
 
-        &:hover
-            background: #4824ff
-            color: white
-            filter: drop-shadow(0px 0px 30px #4824ff30)
+.titleBorder
+  font-size: 56px
+  font-family: 'Prata'
+  font-weight: 500
+  color: white
+  margin: 10px 0
+  text-shadow: -1px -1px 0 #4824ff30, 1px -1px 0 #4824ff30, -1px 1px 0 #4824ff30, 1px 1px 0 #4824ff30
 
-    & .selected
-        background: #04001a
-        color: white
-        border: 1px solid #4824ff
+.tag
+  display: flex
+  font-size: 20px
+  font-weight: 500
+  background: #eeebff
+  color: #4824ff
+  margin-right: 12px
+  padding: 8px 22px 8px 22px
+  border-radius: 24px
+  border: 1px solid #eeebff
+  cursor: pointer
+  transition: 0.5s ease-in-out
 
+.tag:hover
+  background: #4824ff
+  color: white
+  filter: drop-shadow(0px 0px 30px #4824ff30)
 
-.gradiantPartOne 
-    position: absolute
-    background: linear-gradient(to right, transparent, white)
-    color: transparent
-    height: 80px
-    width: 200px
+.selected
+  background: #04001a
+  color: white
+  border: 1px solid #4824ff
 
-.gradiantPartTwo 
-    position: absolute
-    background: linear-gradient(to left, transparent, white)
-    color: transparent
-    height: 80px
-    width: 100px
+.subCategory
+  display: flex
+  justify-content: center
+  margin-top: 20px
+  margin-bottom: 20px
+
+.gradiantPartOne
+  position: absolute
+  background: linear-gradient(to right, transparent, white)
+  color: transparent
+  height: 80px
+  width: 200px
+
+.gradiantPartTwo
+  position: absolute
+  background: linear-gradient(to left, transparent, white)
+  color: transparent
+  height: 80px
+  width: 100px
 
 .hideInDark
   display: block
@@ -80,22 +92,22 @@ html[data-theme='dark'] .hideInDark
   display: none
 
 html[data-theme='dark'] .mainTitle
-    background: linear-gradient(to right, #4824ff,#4824ff, #85ebff,
-            #eeebff, #85aeff, #4824ff,#4824ff)
-    background-clip: text
-    color: transparent
-    background-size:200%
-    animation: gradientAnimation 5s linear infinite
-            
+  background: linear-gradient(to right, #4824ff,#4824ff, #85ebff, #eeebff, #85aeff, #4824ff,#4824ff)
+  background-clip: text
+  -webkit-background-clip: text
+  color: transparent
+  background-size: 200%
+  animation: gradientAnimation 5s linear infinite
+
 @keyframes gradientAnimation
-    0% 
-        background-position: 200% 50%
-    100% 
-        background-position: 0% 50%
+  0%
+    background-position: 200% 50%
+  100%
+    background-position: 0% 50%
 
 @media (min-width: 768px) and (max-width: 1024px)
   .portfolioBlock
-    padding-top: 150px    
+    padding-top: 150px
 
     .firstBlock
       gap: 20px
@@ -129,11 +141,22 @@ html[data-theme='dark'] .mainTitle
   .gradiantPartTwo
     width: 80px
 
-  html[data-theme='dark'] .mainTitle
-    background: linear-gradient(to right, #4824ff,#4824ff, #85ebff,
-            #eeebff, #85aeff, #4824ff,#4824ff)
-    background-clip: text
-    -webkit-background-clip: text
-    color: transparent
-    background-size: 200%
-    animation: gradientAnimation 6s linear infinite
+@media (min-width: 320px) and (max-width: 768px)
+  .mainTitle
+    font-size: 35px
+
+  .arrayIcon
+    width: 25px
+
+  .gradiantPartOne,
+  .gradiantPartTwo,
+  .titleBorder
+    display: none
+
+  .blockSubTitle
+    flex-direction: column
+    gap: 10px
+
+  .subCategory
+    flex-direction: column
+    gap: 10px

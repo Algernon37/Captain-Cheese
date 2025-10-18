@@ -57,105 +57,124 @@ html[data-theme='dark'] .fixed
         filter: drop-shadow(0px 0px 35px #4824ff)
 
 html[data-theme='dark'] .icon
-    filter: invert(1)
+  filter: invert(1)
 
 html[data-theme='dark'] .icon:hover
-    filter: invert(0) drop-shadow(0px 0px 35px #4824ff)
+  filter: invert(0) drop-shadow(0px 0px 35px #4824ff)
+
+
+/* Переключатели */
 
 .switch
-    width: 100px
-    height: 55px
-    border-radius: 55px
-    background-color: #eeebff
-    overflow: hidden
-    cursor: pointer
+  width: 100px
+  height: 55px
+  border-radius: 55px
+  background-color: #eeebff
+  overflow: hidden
+  cursor: pointer
 
 .theme
-    margin: 2px
-    width: 51px
-    height: 51px
-    border-radius: 55px
-    background-color: white
-    transform: translateX(0)
-    transition: 0.5s ease-in-out
+  margin: 2px
+  width: 51px
+  height: 51px
+  border-radius: 55px
+  background-color: white
+  transform: translateX(0)
+  transition: .5s ease-in-out
 
-    &.light
-        padding: 10px
-        content: url(/icons/sunLogo.png)
+  &.light
+    padding: 10px
+    content: url(/icons/sunLogo.png)
 
-    &.dark
-        padding: 10px
-        background-color: black
-        content: url(/icons/moonLogo.png)
-
-.headerButtons
-    display: flex
-    justify-content: center
-    align-items: center
-    gap: 10px
+  &.dark
+    padding: 10px
+    background-color: black
+    content: url(/icons/moonLogo.png)
 
 .language
-    margin: 2px
-    width: 51px
-    height: 51px
-    border-radius: 55px
-    background-color: white
-    transform: translateX(0)
-    transition: 0.5s ease-in-out
+  margin: 2px
+  width: 51px
+  height: 51px
+  border-radius: 55px
+  background-color: white
+  transform: translateX(0)
+  transition: .5s ease-in-out
 
-    &.languagEn
-        padding: 1px
-        content: url(/icons/en.png)
+  &.languagEn
+    padding: 1px
+    content: url(/icons/en.png)
 
-    &.languagRu
-        padding: 1px
-        content: url(/icons/ru.png)
+  &.languagRu
+    padding: 1px
+    content: url(/icons/ru.png)
+
+.headerButtons
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 10px
+
+/* Бургер и меню */
 
 .burgerMenu
-    position: fixed
-    top: 10vh
-    width: 80vw
-    max-width: 400px
-    background-color: rgba(255, 255, 255, 0.95)
-    border-radius: 20px
-    padding: 30px
-    display: flex
-    flex-direction: column
-    gap: 20px
-    z-index: 1000
-    animation: slideIn 0.4s ease-out forwards
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3)
-    
+  position: fixed
+  top: 10vh
+  width: 80vw
+  max-width: 400px
+  background-color: rgba(255,255,255,.95)
+  border-radius: 20px
+  padding: 30px
+  display: flex
+  flex-direction: column
+  gap: 20px
+  z-index: 1000
+  animation: slideIn .4s ease-out forwards
+  box-shadow: 0 8px 30px rgba(0,0,0,.3)
+
 .overlay
   position: fixed
   top: 0
   left: 0
   width: 100vw
   height: 100vh
-  background-color: rgba(0, 0, 0, 0.6)
+  background-color: rgba(0,0,0,.6)
   backdrop-filter: blur(5px)
   z-index: 999
-  animation: fadeIn 0.3s ease-in-out forwards
+  animation: fadeIn .3s ease-in-out forwards
 
 .burgerIcon
-    display: none
-    width: 40px
-    height: 40px
-    background-repeat: no-repeat
-    background-size: contain
-    background-position: center
-    cursor: pointer
-    transition: 0.3s ease-in-out
-    z-index: 1100
-    
-    &:hover, &:active
-        filter: drop-shadow(0px 0px 35px #4824ff)
+  display: none
+  width: 40px
+  height: 40px
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center
+  cursor: pointer
+  transition: .3s ease-in-out
+  z-index: 1100
 
-    &.light
-        background-image: url('/icons/menuDark.png')
+  &:hover, &:active
+    filter: drop-shadow(0 0 35px #4824ff)
 
-    &.dark
-        background-image: url('/icons/menu.png')
+  &.light
+    background-image: url('/icons/menuDark.png')
+
+  &.dark
+    background-image: url('/icons/menu.png')
+
+/* Кнопки внутри бургер-меню (покажем на узких экранах) */
+.menuActions
+  display: none
+  margin-top: 10px
+  gap: 12px
+
+.menuActionsRow
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 10px
+
+/* Анимации */
 
 @keyframes slideIn
   from
@@ -171,24 +190,179 @@ html[data-theme='dark'] .icon:hover
   to
     opacity: 1
 
-@media (max-width: 1460px)
-    .headerBlock
-        justify-content: space-between
+/* ========= АДАПТИВ ДО 1460 ========= */
 
-    .menu
-        display: none
+@media (max-width: 1482px)
+  .headerBlock
+    justify-content: space-between
 
-    .burgerMenu
-        display: flex
+  .menu
+    display: none
 
-    .burgerIcon
-        display: block
+  .burgerMenu
+    display: flex
 
-    html[data-theme='dark'] .burgerMenu
-        background-color: rgba(4, 0, 26, 0.95)
+  .burgerIcon
+    display: block
 
-    html[data-theme='dark'] .burgerMenu a
-        color: #fff
+  html[data-theme='dark'] .burgerMenu
+    background-color: rgba(4,0,26,.95)
 
-    html[data-theme='dark'] .burgerMenu a:hover
-        filter: invert(0) drop-shadow(0px 0px 35px #4824ff)
+  html[data-theme='dark'] .burgerMenu a
+    color: #fff
+
+  html[data-theme='dark'] .burgerMenu a:hover
+    filter: invert(0) drop-shadow(0 0 35px #4824ff)
+
+/* ========= ДОП. БЛОК (твой пример) ========= */
+
+@media (min-width: 320px) and (max-width: 425px)
+  .contactsBlock
+    flex-direction: column
+    gap: 40px
+    padding-top: 120px
+    margin-bottom: 100px
+    text-align: center
+
+/* Фиксы компоновки: бургер фиксированной ширины, кнопки — эластичные */
+.headerBlock
+  align-items: center
+
+.burgerIcon
+  flex: 0 0 40px
+
+/* ====== 561–700 px ====== */
+@media (min-width: 561px) and (max-width: 700px)
+  .headerBlock
+    padding: 0 12px
+    gap: 8px
+    justify-content: space-between
+
+  .menu
+    display: none !important
+
+  .burgerIcon
+    display: block
+    width: 34px
+    height: 34px
+    flex: 0 0 34px
+    z-index: 1100
+
+  .headerButtons
+    flex: 1 1 auto
+    justify-content: center
+    flex-wrap: wrap
+    column-gap: 8px
+    row-gap: 6px
+
+    > *:first-child
+      transform: scale(.85)
+      transform-origin: left center
+
+  .icon
+    width: 36px
+    height: 36px
+
+    &.telegram
+      padding: 5px 6px 5px 5px
+
+    &.instagram
+      padding: 4px
+
+  .switch
+    width: 78px
+    height: 44px
+    border-radius: 44px
+
+  .theme, .language
+    width: 38px
+    height: 38px
+    border-radius: 38px
+
+/* ====== 320–560 px ====== */
+@media (min-width: 320px) and (max-width: 560px)
+  .headerBlock
+    height: 64px
+    padding: 0 14px
+    gap: 10px
+    justify-content: space-between
+
+  .menu
+    display: none !important
+
+  .burgerIcon
+    display: block
+    width: 34px
+    height: 34px
+    flex: 0 0 34px
+
+  .headerButtons
+    gap: 8px
+    flex-wrap: nowrap
+    min-width: 0
+
+    > *:first-child
+      transform: scale(.88)
+      transform-origin: left center
+
+  .icon
+    width: 40px
+    height: 40px
+    border-radius: 50%
+
+    &.telegram
+      padding: 6px 7px 6px 6px
+
+    &.instagram
+      padding: 5px
+
+  .switch
+    transform: scale(.82)
+    transform-origin: right center
+
+  .theme, .language
+    border-radius: 55px
+
+  .burgerMenu
+    top: 70px
+    right: 4vw
+    left: auto
+    width: 92vw
+    max-width: none
+    padding: 22px
+    gap: 16px
+    border-radius: 16px
+
+  .overlay
+    background-color: rgba(0,0,0,.55)
+    backdrop-filter: blur(3px)
+
+  .headerBlock.fixed
+    padding: 0 12px
+
+/* ====== 0–600 px: прячем верхние кнопки, показываем их в бургере ====== */
+@media (max-width: 600px)
+  .headerButtons
+    display: none !important
+
+  .menuActions
+    display: flex
+    flex-direction: column
+    flex-direction: column-reverse 
+    align-items: center
+    justify-content: center
+
+  .menuActionsRow
+    margin-top: 8px
+
+  .menuActions Button,
+  .menuActions button
+    transform: none
+    width: 220px
+
+  .menuActions .icon
+    width: 44px
+    height: 44px
+
+  .menuActions .switch
+    transform: none

@@ -43,7 +43,7 @@ const PortfolioBlock = () => {
         <img className={style.arrayIcon} src="/icons/array.png" alt="array" draggable="false" />
       </div>
 
-      <div className="flex items-center justify-center gap-3 my-6">
+      <div className={style.blockSubTitle}>
         <h3 className={style.subTitle}>{t('portfolio.subtitle')}</h3>
         <div
           className="w-10 h-10 bg-center bg-contain bg-no-repeat"
@@ -52,7 +52,7 @@ const PortfolioBlock = () => {
         />
       </div>
 
-      <div className="flex justify-center mb-[20px] mt-[20px]">
+      <div className={style.subCategory}>
         <p
           className={`${style.tag} ${selectedCategory === 'all' ? style.selected : ''}`}
           onClick={() => setSelectedCategory('all')}
