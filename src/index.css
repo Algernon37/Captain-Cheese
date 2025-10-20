@@ -56,6 +56,9 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 body{
@@ -69,7 +72,7 @@ body{
 }
 
 html[data-theme='light'] {
-    --main-background: white;
+    --main-background: #FFF8E7;
     --main-text-color: black;
     --switch-background: #eeebff;
     --main-element-color: #eeebff;

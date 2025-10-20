@@ -8,10 +8,10 @@
     },
     {
       "id": 2,
-      "question_ru": "Можно ли заказать индивидуальный вкус?",
-      "question_en": "Can I request a custom flavor?",
-      "answer_ru": "Конечно! Свяжитесь со мной через Telegram, и обсудим детали.",
-      "answer_en": "Of course! Contact me via Telegram and we'll discuss the details."
+      "question_ru": "Как с вами можно связаться?",
+      "question_en": "How can I contact you?",
+      "answer_ru": "Где вам удобнее — WhatsApp, Telegram или Instagram.",
+      "answer_en": "Whichever you prefer — WhatsApp, Telegram, or Instagram."
     },
     {
       "id": 3,

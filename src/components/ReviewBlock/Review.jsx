@@ -4,7 +4,7 @@ const Review = ( props ) => {
     return (
         <div className={style.reviewCard}>
             <div className={style.reviewContent}>
-                <div className='py-0 px-[20px] pb-[30px] pt-[20px]'>
+                <div className="flex flex-col justify-between gap-[30px] py-0 px-[20px] pb-[30px] pt-[20px]">
                     <div className='flex place-items-center'>
                         <h2 className='w-[90%] text-2xl font-semibold'>
                             {props.name}

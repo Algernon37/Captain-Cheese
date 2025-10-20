@@ -1,4 +1,7 @@
-.reviewBlock 
+.bigReviewBlock
+  padding-top: 200px
+
+.reviewBlock
   min-height: 500px
   background: #4824ff
   border-radius: 28px
@@ -9,10 +12,10 @@
     padding-top: 36px
     font-size: 50px
 
-  .description 
+  .description
     color: white
     text-align: center
-    margin-bottom: 25px 
+    margin-bottom: 25px
     padding: 0 20px
     font-size: 22px
     line-height: 32px
@@ -25,34 +28,41 @@
 
 /* ----- КАРУСЕЛЬ ----- */
 .reviewCarousel
-  width: 1260px           
+  width: 1260px
   max-width: 100%
   margin: 0 auto
   overflow: hidden
-
 
 .reviewContainer
   display: flex
   overflow-x: auto
   scroll-behavior: smooth
   -webkit-overflow-scrolling: touch
-  scroll-snap-type: x mandatory  
+  scroll-snap-type: x mandatory
 
 .reviewCard
-  flex: 0 0 420px        
-  scroll-snap-align: start 
+  flex: 0 0 420px
+  scroll-snap-align: start
+  display: flex
+  align-items: stretch
 
 .reviewContent
-  width: 384px           
-  margin: 0 auto          
+  width: 384px
+  margin: 0 auto
   background: var(--main-background)
   border-radius: 24px
+  min-height: 260px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  overflow: hidden
 
 .reviewBlock .review
   margin-top: auto
   font-size: 19px
   line-height: 27px
   width: 90%
+  flex-grow: 1
 
 /* ----- КНОПКИ ----- */
 .nextButton
@@ -112,8 +122,7 @@
   scale: .37
   height: 55px
 
-
-html[data-theme='dark'] .reviewContent 
+html[data-theme='dark'] .reviewContent
   background: var(--main-background)
 
 html[data-theme='dark'] .link
@@ -122,11 +131,9 @@ html[data-theme='dark'] .link
 html[data-theme='dark'] .arrayCornerIcon
   filter: invert(1)
 
-
 @media (min-width: 1024px) and (max-width: 1399px)
   .reviewCarousel
-    width: 840px        
-
+    width: 840px
 
 @media (min-width: 801px) and (max-width: 1024px)
   .reviewBlock
@@ -175,7 +182,6 @@ html[data-theme='dark'] .arrayCornerIcon
       height: 60px
       padding: 12px
 
-
 @media (max-width: 800px)
   .reviewCarousel
     width: 360px
@@ -195,3 +201,70 @@ html[data-theme='dark'] .arrayCornerIcon
     font-size: 16px
     line-height: 24px
 
+@media (max-width: 375px)
+  .bigReviewBlock
+    padding-top: 100px
+
+  .reviewBlock
+    border-radius: 20px
+    padding: 18px 0
+    h1
+      font-size: 32px
+      padding-top: 10px
+    .description
+      font-size: 16px
+      line-height: 24px
+      padding: 0 14px
+      margin-bottom: 16px
+
+  .reviewCarousel
+    width: 100%
+    margin: 0
+    padding: 0
+    overflow: hidden
+    max-width: none
+
+  .reviewContainer
+    padding: 0
+    gap: 0
+    scroll-snap-type: x mandatory
+    scroll-snap-stop: always
+    scroll-padding-inline: 0
+
+  .reviewCard
+    box-sizing: border-box
+    flex: 0 0 100%
+    min-width: 100%
+    padding: 0 14px
+    margin: 0
+    scroll-snap-align: start
+
+  .reviewContent
+    width: 100%
+    margin: 0
+    border-radius: 18px
+
+  .reviewBlock .review
+    font-size: 16px
+    line-height: 24px
+
+  .nextButton
+    width: 44px
+    height: 44px
+    .arrayNextIcon
+      height: 56px
+      padding: 10px
+      scale: .62
+
+  .reviewBlock .link
+    height: 36px
+    width: 72px
+    border-radius: 20px
+
+  .reviewBlock .telegramIcon
+    height: 24px
+    scale: .78
+
+  .reviewBlock .arrayCornerIcon
+    height: 46px
+    scale: .32

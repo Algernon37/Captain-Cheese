@@ -49,7 +49,7 @@
   background: #eeebff
   color: #4824ff
   margin-right: 12px
-  padding: 8px 22px 8px 22px
+  padding: 8px 22px
   border-radius: 24px
   border: 1px solid #eeebff
   cursor: pointer
@@ -108,55 +108,45 @@ html[data-theme='dark'] .mainTitle
 @media (min-width: 768px) and (max-width: 1024px)
   .portfolioBlock
     padding-top: 150px
-
     .firstBlock
       gap: 20px
-
     .mainTitle
       font-size: 40px
-
     .subTitle
       font-size: 20px
-
     .arrayIcon
       width: 45px
       margin: 0 10px
-
     .titleBorder
       font-size: 44px
       text-shadow: -1px -1px 0 #4824ff20, 1px -1px 0 #4824ff20, -1px 1px 0 #4824ff20, 1px 1px 0 #4824ff20
-
     .tag
       font-size: 18px
       padding: 6px 18px
       margin-right: 10px
-
-  .gradiantPartOne,
-  .gradiantPartTwo
+  .gradiantPartOne, .gradiantPartTwo
     height: 60px
-
   .gradiantPartOne
     width: 160px
-
   .gradiantPartTwo
     width: 80px
 
-@media (min-width: 320px) and (max-width: 768px)
-  .mainTitle
-    font-size: 35px
-
-  .arrayIcon
-    width: 25px
-
-  .gradiantPartOne,
-  .gradiantPartTwo,
-  .titleBorder
+@media (max-width: 768px)
+  .gradiantPartOne, .gradiantPartTwo, .titleBorder
     display: none
-
   .blockSubTitle
     flex-direction: column
     gap: 10px
 
+@media (max-width: 689px)
+  .portfolioBlock
+    padding-top: 100px
+  .mainTitle
+    font-size: 35px
+  .arrayIcon
+    width: 25px
   .subCategory
     flex-direction: column
     gap: 10px
+  .subTitle
+    font-size: 18px

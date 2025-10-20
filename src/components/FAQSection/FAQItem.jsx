@@ -11,7 +11,7 @@ export default function FAQItem({ question, answer, isOpen, onClick }) {
         ref={parent}
       >
         <div className="flex items-center justify-between hover:text-[#4824ff] transition-colors">
-          <p className="text-[26px]">{question}</p>
+          <p className={style.subtitle}>{question}</p>
           <span
             className={`transition-transform ${
               isOpen ? 'rotate-45' : 'text-gray-500'

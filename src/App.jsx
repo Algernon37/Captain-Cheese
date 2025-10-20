@@ -1,4 +1,5 @@
 import Header from './components/Header/Header';
+import SliderComponent from "./components/SliderComponent/SliderComponent";
 import WelcomeBlock from './components/WelcomeBlock/WelcomBlock';
 import PortfolioBlock from './components/PortfolioBlock/PortfolioBlock';
 import ReviewBlock from './components/ReviewBlock/ReviewBlock';
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Header/>
+      <SliderComponent />
       <WelcomeBlock />
       <PortfolioBlock />
       <ReviewBlock />

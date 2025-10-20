@@ -7,6 +7,9 @@
     "faq": "FAQ",
     "contacts": "Contacts"
   },
+    "hero": {
+    "subtitle": "When you make a little, you can make it truly well—without rush or shortcuts, with respect for the product and the customer."
+  },
   "welcome": {
     "title": "My name is <1>Irina Pliner</1>, and I am a <1>cheesemaker</1>.",
     "line1": "I make cheese not far from <1>Tbilisi</1>, at an altitude of <3>1100 meters</3> — in clean air, silence, and peace.",
@@ -19,12 +22,12 @@
     "tags": {
       "all": "All Products",
       "cheese": "Cheeses",
-      "candy": "Chocolate",
+      "candy": "Сhocolate cheese truffles",
       "jam": "Jam"
     }
   },
   "modal": {
-    "pricePer100g": "Price per 100g",
+    "pricePer100g": "Price",
     "contact": "You can contact me on Telegram 👇",
     "telegram": "Telegram"
   },

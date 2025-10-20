@@ -1,5 +1,5 @@
 import FilteredList from '../FilteredList/FilteredList';
-import ComingSoonComponent from './ComingSoonComponent'
+import ComingSoonComponent from './ComingSoonComponent/ComingSoonComponent'
 
 
 const ThirdFilter = () => {

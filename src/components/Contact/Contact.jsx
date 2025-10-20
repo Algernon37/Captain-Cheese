@@ -8,10 +8,10 @@ const Contact = () => {
     <div className={style.contactsBlock} id="Contacts">
       <img src="images/BigPictureContacts.png" alt="cheese farm" />
       <div className={style.contactsBlock__inner}>
-        <h1 className="text-[52px] pb-[20px]">
+        <h1 className={style.mainTitle}>
           {t('contact.title')}
         </h1>
-        <p className="text-[26px] text-center">
+        <p className={style.mainText}>
           <Trans
             i18nKey="contact.text"
             components={{

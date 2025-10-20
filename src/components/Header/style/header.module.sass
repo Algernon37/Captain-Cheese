@@ -5,14 +5,14 @@
 
 .headerBlock
     display: flex
-    height: 13vh
+    height: 8vh
     place-items: center
     transition: drop-shadow 0.5s ease
 
     & a
         font-size: 18px
         font-weight: 500
-        margin-right: 3%
+        margin-right: 2%
         transition: 0.3s ease-in-out
         cursor: pointer
 
@@ -239,7 +239,7 @@ html[data-theme='dark'] .icon:hover
     justify-content: space-between
 
   .menu
-    display: none !important
+    display: none 
 
   .burgerIcon
     display: block
@@ -288,7 +288,7 @@ html[data-theme='dark'] .icon:hover
     justify-content: space-between
 
   .menu
-    display: none !important
+    display: none 
 
   .burgerIcon
     display: block
@@ -343,7 +343,7 @@ html[data-theme='dark'] .icon:hover
 /* ====== 0–600 px: прячем верхние кнопки, показываем их в бургере ====== */
 @media (max-width: 600px)
   .headerButtons
-    display: none !important
+    display: none 
 
   .menuActions
     display: flex

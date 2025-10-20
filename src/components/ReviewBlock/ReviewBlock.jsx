@@ -11,15 +11,33 @@ const ReviewBlock = () => {
   const lang = i18n.language;
 
   const reviews = [
-    { key: 1, name: 'Владислав', link: 'https://t.me/capcheese',
-      text_ru: 'Текст отзыва, оставленного клиентом в Телеграм канале, который можно открыть нажав на кнопку в правом верхнем углу этого блока.',
-      text_en: 'Review text left by the client in the Telegram channel, which you can open by clicking the button in the upper right corner of this block.' },
-    { key: 2, name: 'Анастасия', link: 'https://t.me/capcheese',
-      text_ru: 'Текст отзыва, оставленного клиентом в Телеграм канале, который можно открыть нажав на кнопку в правом верхнем углу этого блока.',
-      text_en: 'Review text left by the client in the Telegram channel, which you can open by clicking the button in the upper right corner of this block.' },
-    { key: 3, name: 'Ольга', link: 'https://t.me/capcheese',
-      text_ru: 'Текст отзыва, оставленного клиентом в Телеграм канале, который можно открыть нажав на кнопку в правом верхнем углу этого блока.',
-      text_en: 'Review text left by the client in the Telegram channel, which you can open by clicking the button in the upper right corner of this block.' },
+    {
+      key: 1,
+      name: 'Владислав',
+      link: 'https://t.me/capcheese',
+      text_ru:
+        'Покупал несколько сортов сыра — все натуральные, вкус как в детстве! Видно, что сделано с душой и без лишней химии.',
+      text_en:
+        'Bought several types of cheese — all natural, taste like in childhood! You can tell it’s made with care and without additives.'
+    },
+    {
+      key: 2,
+      name: 'Анастасия',
+      link: 'https://t.me/capcheese',
+      text_ru:
+        'Очень понравился сливочный сыр, мягкий и ароматный. Заказывала на подарок — упаковано красиво, доставка быстрая!',
+      text_en:
+        'Loved the creamy cheese, soft and flavorful. Ordered as a gift — beautifully packed, fast delivery!'
+    },
+    {
+      key: 3,
+      name: 'Ольга',
+      link: 'https://t.me/capcheese',
+      text_ru:
+        'Берем сыр только здесь — качество стабильно отличное, вкус яркий. Особенно хорош козий, прям находка!',
+      text_en:
+        'We buy cheese only here — consistently excellent quality, rich flavor. Especially love the goat cheese, a real gem!'
+    }
   ];
 
   const VISIBLE = 3;
@@ -29,7 +47,6 @@ const ReviewBlock = () => {
     const head = reviews.slice(0, VISIBLE);
     const tail = reviews.slice(-VISIBLE);
     const mid  = Array.from({ length: LOOPS }).flatMap(() => reviews);
-    // tail | mid | mid | head
     return [...tail, ...mid, ...mid, ...head];
   }, []);
 
@@ -43,12 +60,11 @@ const ReviewBlock = () => {
     if (cards[1]) {
       const a = cards[0].getBoundingClientRect();
       const b = cards[1].getBoundingClientRect();
-      stride = b.left - a.left; // включает межкарточный зазор, если есть
+      stride = b.left - a.left; 
     }
     return Math.round(stride);
   }, []);
 
-  // жёсткое приведение к ближайшей «ячейке»
   const snapToGrid = useCallback(() => {
     const box = containerRef.current;
     const stride = strideRef.current;
@@ -65,8 +81,7 @@ const ReviewBlock = () => {
     const stride = strideRef.current;
     if (!box || !stride) return;
 
-    const R = reviews.length;
-    const startIdx = VISIBLE + R * LOOPS;                 
+    const R = reviews.length;              
     const minIdx   = VISIBLE;                              
     const maxIdx   = VISIBLE + R * LOOPS * 2 - 1;          
     let idx = Math.round(box.scrollLeft / stride);
@@ -134,7 +149,7 @@ const ReviewBlock = () => {
   }, [lang, measureAndCenter]);
 
   return (
-    <div className="pt-[200px]" id="Reviews">
+    <div className={style.bigReviewBlock} id="Reviews">
       <div className={style.reviewBlock}>
         <h1>{t('reviews.title')}</h1>
         <p className={style.description}>
