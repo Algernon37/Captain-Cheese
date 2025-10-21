@@ -12,7 +12,10 @@ const onload = new Promise(r =>
 const fonts = () => document.fonts?.ready ?? Promise.resolve();
 const frame = () => new Promise(r => requestAnimationFrame(r));
 
-const heroReady = new Promise(r => addEventListener("hero:ready", r, { once: true }));
+const heroReady = Promise.race([
+  new Promise(r => addEventListener("hero:ready", r, { once: true })),
+  new Promise(r => setTimeout(r, 3000)) 
+]);
 
 (async () => {
   const el = document.getElementById("root");
@@ -31,6 +34,7 @@ const heroReady = new Promise(r => addEventListener("hero:ready", r, { once: tru
   await frame();
   window.hidePreloader?.();
 })();
+
 
 
 

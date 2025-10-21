@@ -3,10 +3,10 @@ import style from "./style/SliderComponent.module.sass";
 import { useTranslation } from "react-i18next";
 
 const IMAGES = [
-  "/images/hero/slide1.jpg", 
-  "/images/hero/slide2.jpg",
-  "/images/hero/slide3.jpg",
-  "/images/hero/slide4.jpg",
+  "/images/hero/slide1.webp", 
+  "/images/hero/slide2.webp",
+  "/images/hero/slide3.webp",
+  "/images/hero/slide4.webp",
 ];
 
 const INTERVAL_MS = 6500;

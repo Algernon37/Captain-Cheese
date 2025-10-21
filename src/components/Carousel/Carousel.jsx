@@ -21,7 +21,7 @@ const Carousel = ({ direction }) => {
 
   const rafIdRef = useRef(0);
   const xRef = useRef(0);               
-  const speedRef = useRef(0.2);        
+  const speedRef = useRef(0.3);        
   const pausedRef = useRef(false);      
   const halfRef = useRef(0);            
   const readyRef = useRef(false);       
