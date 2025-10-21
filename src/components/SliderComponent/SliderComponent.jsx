@@ -8,12 +8,13 @@ const IMAGES = [
   "/images/hero/slide3.jpg",
 ];
 
-const INTERVAL_MS = 6500;
+const INTERVAL_MS = 6500; 
 
 export default function SliderComponent() {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const timerRef = useRef(null);
+  const abortRef = useRef(null);
 
   const nextIndex = useMemo(() => (index + 1) % IMAGES.length, [index]);
 
@@ -21,36 +22,51 @@ export default function SliderComponent() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
+    const tick = async () => {
+      const imgEl = new Image();
+      imgEl.decoding = "async";
+      if ("fetchPriority" in imgEl) imgEl.fetchPriority = "low";
+      imgEl.src = IMAGES[nextIndex];
+      if (abortRef.current) abortRef.current.abort();
+      const ac = new AbortController();
+      abortRef.current = ac;
+
+      try {
+        if (imgEl.decode) {
+          await imgEl.decode();
+        }
+        if (!ac.signal.aborted) setIndex(nextIndex);
+      } catch {
+        if (!ac.signal.aborted) setIndex(nextIndex);
+      }
+    };
+
     if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => setIndex(nextIndex), INTERVAL_MS);
+    timerRef.current = setTimeout(tick, INTERVAL_MS);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
+      if (abortRef.current) abortRef.current.abort();
     };
   }, [index, nextIndex]);
-
-
-  useEffect(() => {
-    const img = new Image();
-    img.decoding = "async";
-    img.src = IMAGES[nextIndex];
-  }, [nextIndex]);
 
   return (
     <section className={style.hero} aria-label="Featured photos">
       {IMAGES.map((src, i) => {
         const isActive = i === index;
-        const isFadingIn = i === nextIndex;
+        const isNext = i === nextIndex;
         return (
           <img
             key={src}
             src={src}
             alt=""
-            aria-hidden={!isActive}
+            aria-hidden={!isActive && !isNext}
+            width={1920}
+            height={1080}
             className={[
               style.slide,
               isActive ? style.isActive : "",
-              isFadingIn ? style.isFadingIn : "",
+              isNext ? style.isNext : "",
             ].join(" ")}
             decoding="async"
             loading={i === 0 ? "eager" : "lazy"}

@@ -7,6 +7,13 @@
     "faq": "FAQ",
     "contacts": "Contacts"
   },
+  "contactBtn": {
+    "btn": "Contact"
+  },
+  "modalContact": {
+    "contactTitle": "Contacts",
+    "contactText": "You can contact me on Telegram or Instagram 👇"
+  },
     "hero": {
     "subtitle": "When you make a little, you can make it truly well—without rush or shortcuts, with respect for the product and the customer."
   },
@@ -19,10 +26,11 @@
     "title": "Assortment",
     "subtitle": "All cheeses are made from farm cow's milk",
     "comingSoon": "Coming soon!",
+    "candyTitle": "Designer candies for gourmets – made from cheese and chocolate.",
     "tags": {
       "all": "All Products",
       "cheese": "Cheeses",
-      "candy": "Сhocolate cheese truffles",
+      "candy": "Collection of cheese candies",
       "jam": "Jam"
     }
   },

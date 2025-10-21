@@ -146,7 +146,7 @@ html[data-theme='dark'] .arrayCornerIcon
       padding-top: 20px
 
     .description
-      font-size: 18px
+      font-size: 16px
       line-height: 28px
       padding: 0 30px
       margin-bottom: 20px
@@ -183,18 +183,29 @@ html[data-theme='dark'] .arrayCornerIcon
       padding: 12px
 
 @media (max-width: 800px)
+  .reviewBlock
+    border-radius: 20px
+    padding: 18px 0
+    h1
+      font-size: 30px
+      padding-top: 10px
+    .description
+      font-size: 18px
+      line-height: 25px
+
+@media (min-width: 376px) and (max-width: 800px)
   .reviewCarousel
-    width: 360px
+    width: 370px
     max-width: 100%
     margin: 0 auto
     overflow: hidden
 
   .reviewCard
-    flex: 0 0 360px
+    flex: 0 0 350px
     scroll-snap-align: center
 
   .reviewContent
-    width: 340px
+    width: 310px
     border-radius: 18px
 
   .reviewBlock .review
@@ -202,20 +213,23 @@ html[data-theme='dark'] .arrayCornerIcon
     line-height: 24px
 
 @media (max-width: 375px)
+
+  .reviewCarousel
+    width: 320px
+    max-width: 100%
+    margin: 0 auto
+    overflow: hidden
+
+  .reviewCard
+    flex: 0 0 320px
+    scroll-snap-align: center
+
+  .reviewContent
+    width: 300px
+    border-radius: 18px
+
   .bigReviewBlock
     padding-top: 100px
-
-  .reviewBlock
-    border-radius: 20px
-    padding: 18px 0
-    h1
-      font-size: 32px
-      padding-top: 10px
-    .description
-      font-size: 16px
-      line-height: 24px
-      padding: 0 14px
-      margin-bottom: 16px
 
   .reviewCarousel
     width: 100%
