@@ -10,6 +10,7 @@
   align-items: center;
   transition: opacity 0.5s ease, visibility 0.5s ease;
   z-index: 1000;
+  padding: 24px;
 }
 
 .modalImage {
@@ -17,24 +18,28 @@
   max-height: 40vh;
   border-radius: 10px;
   z-index: 1000;
+  margin: 0 auto 12px;
 }
 
 .cheseInfo {
+  position: relative;
   display: flex;
   justify-content: center;
   background: white;
   padding: 40px;
   border-radius: 16px;
   width: 40vw;
+  box-sizing: border-box;
 }
 .cheseInfo__price {
   background: linear-gradient(to right, #4824ff, #4824ff, #85ebff, #eeebff, #85aeff, #4824ff, #4824ff);
+  background-clip: text;
   -webkit-background-clip: text;
-          background-clip: text;
   color: transparent;
   background-size: 200%;
   animation: gradientAnimation 3s linear infinite;
 }
+
 @keyframes gradientAnimation {
   0% {
     background-position: 200% 50%;
@@ -43,27 +48,29 @@
     background-position: 0% 50%;
   }
 }
-
 .modelCloseButton {
-  position: relative;
-  width: 55px;
-  height: 50px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
   outline: none;
   font-size: 0;
   border-radius: 55px;
-  transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease, background-color 0.25s ease;
+  z-index: 1002;
 }
 .modelCloseButton::before, .modelCloseButton::after {
   content: "";
   position: absolute;
-  width: 30px;
+  top: 50%;
+  left: 50%;
+  width: 26px;
   height: 2px;
   background-color: #333;
-}
-.modelCloseButton::before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .modelCloseButton::after {
@@ -89,11 +96,11 @@
   font-size: 20px;
   color: white;
   text-decoration: none;
-  margin-right: 0px;
+  margin-right: 0;
 }
 .socialButton:hover {
   background: #4824ff;
-  filter: drop-shadow(0px 0px 35px rgba(72, 36, 255, 0.2509803922));
+  filter: drop-shadow(0 0 35px rgba(72, 36, 255, 0.2509803922));
   color: #eeebff;
 }
 
@@ -114,7 +121,7 @@
     border-radius: 12px;
   }
   .cheseInfo {
-    width: 60vw;
+    width: 70vw;
     padding: 32px;
     border-radius: 14px;
   }
@@ -134,5 +141,48 @@
     width: 22px;
     height: 22px;
     margin-right: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .modalWindowImage {
+    padding: 14px;
+  }
+  .modalImage {
+    display: block;
+    max-width: 84vw;
+    max-height: 28vh;
+    border-radius: 12px;
+    margin: 0 auto 12px;
+  }
+  .cheseInfo {
+    width: 90vw;
+    padding: 18px;
+    border-radius: 14px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cheseInfo h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .cheseInfo p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .modelCloseButton {
+    top: 8px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+  }
+  .modelCloseButton::before, .modelCloseButton::after {
+    width: 22px;
+  }
+  .socialButton {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
   }
 }/*# sourceMappingURL=modalcheesewindow.module.css.map */

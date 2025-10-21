@@ -14,13 +14,14 @@
     "contactTitle": "Contacts",
     "contactText": "You can contact me on Telegram or Instagram 👇"
   },
-    "hero": {
-    "subtitle": "When you make a little, you can make it truly well—without rush or shortcuts, with respect for the product and the customer."
+  "hero": {
+    "subtitle": "Artisan cheeses for true gourmets. French traditions, handmade quality, and the aesthetics of taste. Created for pure pleasure.",
+    "subtitle2":"When you make a little, you can make it true. Without haste or simplification — with respect for the product and for the customer."
   },
   "welcome": {
-    "title": "My name is <1>Irina Pliner</1>, and I am a <1>cheesemaker</1>.",
-    "line1": "I make cheese not far from <1>Tbilisi</1>, at an altitude of <3>1100 meters</3> — in clean air, silence, and peace.",
-    "line2": "Cheese that you want to come back to — not because it’s familiar, but because there’s something <1>special and genuine</1> in it."
+    "title": "My name is Irina Pliner. I make cheese near Tbilisi, at an altitude of 1100 meters — in clean air, silence, and peace.",
+    "line1": "All cheeses are handmade using classic French and Italian techniques, with mandatory pasteurization. My cheese doesn’t smell like a factory — every piece passes through my own clean, caring hands.",
+    "line2": "My cheese has character, depth, and soul. It’s not universal — it’s alive, honest, complex, and beautiful. The kind of cheese you want to return to because it holds something special and genuine."
   },
   "portfolio": {
     "title": "Assortment",
@@ -57,17 +58,17 @@
   },
   "guarantees": {
     "title": "GUARANTEES",
-    "point1": "All cheeses are <1>handcrafted</1> from farm-fresh milk following traditional <2/>French and Italian technologies, with mandatory pasteurization.",
-    "point2": "I pay great attention to the aesthetics of cheese — <1>everything in it should be beautiful.</1><2/>I strive to make each wheel elegant and noble.",
-    "point3": "My cheese doesn’t smell like a factory. <1>Every piece</1> passes through my hands<2/> — <3>clean, careful, and caring.</3>",
-    "point4": "I am always available on <1>Telegram</1> — I respond quickly,<2/>and advise on storage and cheese selection."
+    "point1": "All cheeses are handcrafted from farm-fresh milk following traditional French and Italian technologies, with mandatory pasteurization.",
+    "point2": "I pay great attention to the aesthetics of cheese — everything in it should be beautiful.I strive to make each wheel elegant and noble.",
+    "point3": "My cheese doesn’t smell like a factory. Every piece passes through my hands — clean, careful, and caring.",
+    "point4": "I am always available on Telegram — I respond quickly,and advise on storage and cheese selection."
   },
   "faq": {
     "title": "Frequently Asked Questions"
   },
   "contact": {
     "title": "Contact Me",
-    "text": "Have questions, suggestions, or <blue>want to order cheese</blue>?<br/><blue>Write to me</blue> — I’m always happy to chat and meet new people!<br/>My <blue>Telegram</blue> and other contacts are waiting below."
+    "text": "Have questions, suggestions, or want to order cheese?<br/>Write to me — I’m always happy to chat and meet new people!<br/>My Telegram and other contacts are waiting below."
   }
 }
 

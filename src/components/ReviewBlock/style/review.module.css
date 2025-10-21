@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.bigReviewBlock {
+  padding-top: 200px;
+}
+
 .reviewBlock {
   min-height: 500px;
   background: #4824ff;
@@ -44,6 +48,8 @@
 .reviewCard {
   flex: 0 0 420px;
   scroll-snap-align: start;
+  display: flex;
+  align-items: stretch;
 }
 
 .reviewContent {
@@ -51,6 +57,11 @@
   margin: 0 auto;
   background: var(--main-background);
   border-radius: 24px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .reviewBlock .review {
@@ -58,6 +69,7 @@
   font-size: 19px;
   line-height: 27px;
   width: 90%;
+  flex-grow: 1;
 }
 
 /* ----- КНОПКИ ----- */
@@ -139,12 +151,7 @@ html[data-theme=dark] .arrayCornerIcon {
     width: 840px;
   }
 }
-@media (max-width: 1023px) {
-  .reviewCarousel {
-    width: 420px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 801px) and (max-width: 1024px) {
   .reviewBlock {
     min-height: 420px;
     border-radius: 24px;
@@ -155,12 +162,11 @@ html[data-theme=dark] .arrayCornerIcon {
     padding-top: 20px;
   }
   .reviewBlock .description {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
     padding: 0 30px;
     margin-bottom: 20px;
   }
-  /* --- ровно 2 карточки --- */
   .reviewCarousel {
     width: 720px;
     max-width: 100%;
@@ -191,5 +197,111 @@ html[data-theme=dark] .arrayCornerIcon {
     scale: 0.65;
     height: 60px;
     padding: 12px;
+  }
+}
+@media (max-width: 800px) {
+  .reviewBlock {
+    border-radius: 20px;
+    padding: 18px 0;
+  }
+  .reviewBlock h1 {
+    font-size: 30px;
+    padding-top: 10px;
+  }
+  .reviewBlock .description {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+@media (min-width: 376px) and (max-width: 800px) {
+  .reviewCarousel {
+    width: 370px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .reviewCard {
+    flex: 0 0 350px;
+    scroll-snap-align: center;
+  }
+  .reviewContent {
+    width: 310px;
+    border-radius: 18px;
+  }
+  .reviewBlock .review {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 375px) {
+  .reviewCarousel {
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .reviewCard {
+    flex: 0 0 320px;
+    scroll-snap-align: center;
+  }
+  .reviewContent {
+    width: 300px;
+    border-radius: 18px;
+  }
+  .bigReviewBlock {
+    padding-top: 100px;
+  }
+  .reviewCarousel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-width: none;
+  }
+  .reviewContainer {
+    padding: 0;
+    gap: 0;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    scroll-padding-inline: 0;
+  }
+  .reviewCard {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 0 14px;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  .reviewContent {
+    width: 100%;
+    margin: 0;
+    border-radius: 18px;
+  }
+  .reviewBlock .review {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .nextButton {
+    width: 44px;
+    height: 44px;
+  }
+  .nextButton .arrayNextIcon {
+    height: 56px;
+    padding: 10px;
+    scale: 0.62;
+  }
+  .reviewBlock .link {
+    height: 36px;
+    width: 72px;
+    border-radius: 20px;
+  }
+  .reviewBlock .telegramIcon {
+    height: 24px;
+    scale: 0.78;
+  }
+  .reviewBlock .arrayCornerIcon {
+    height: 46px;
+    scale: 0.32;
   }
 }/*# sourceMappingURL=review.module.css.map */

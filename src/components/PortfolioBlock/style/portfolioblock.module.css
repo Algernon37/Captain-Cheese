@@ -2,12 +2,14 @@
   height: auto;
   padding-top: 200px;
 }
-.portfolioBlock .firstBlock {
+
+.firstBlock {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.portfolioBlock .mainTitle {
+
+.mainTitle {
   font-size: 56px;
   font-family: "Prata";
   font-weight: 500;
@@ -17,17 +19,29 @@
   color: transparent;
   z-index: 1;
 }
-.portfolioBlock .subTitle {
+
+.blockSubTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.subTitle {
+  text-align: center;
   font-size: 24px;
   font-family: "Prata";
 }
-.portfolioBlock .arrayIcon {
+
+.arrayIcon {
   margin: 0 20px;
   padding: 0;
   width: 60px;
   filter: drop-shadow(20px 20px 15px rgba(72, 36, 255, 0.1450980392));
 }
-.portfolioBlock .titleBorder {
+
+.titleBorder {
   font-size: 56px;
   font-family: "Prata";
   font-weight: 500;
@@ -35,33 +49,43 @@
   margin: 10px 0;
   text-shadow: -1px -1px 0 rgba(72, 36, 255, 0.1882352941), 1px -1px 0 rgba(72, 36, 255, 0.1882352941), -1px 1px 0 rgba(72, 36, 255, 0.1882352941), 1px 1px 0 rgba(72, 36, 255, 0.1882352941);
 }
-.portfolioBlock .tag {
+
+.tag {
   display: flex;
   font-size: 20px;
   font-weight: 500;
   background: #eeebff;
   color: #4824ff;
   margin-right: 12px;
-  padding: 8px 22px 8px 22px;
+  padding: 8px 22px;
   border-radius: 24px;
   border: 1px solid #eeebff;
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
-.portfolioBlock .tag:hover {
+
+.tag:hover {
   background: #4824ff;
   color: white;
   filter: drop-shadow(0px 0px 30px rgba(72, 36, 255, 0.1882352941));
 }
-.portfolioBlock .selected {
+
+.selected {
   background: #04001a;
   color: white;
   border: 1px solid #4824ff;
 }
 
+.subCategory {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .gradiantPartOne {
   position: absolute;
-  background: linear-gradient(to right, transparent, white);
+  background: linear-gradient(to right, transparent, var(--main-background));
   color: transparent;
   height: 80px;
   width: 200px;
@@ -69,7 +93,7 @@
 
 .gradiantPartTwo {
   position: absolute;
-  background: linear-gradient(to left, transparent, white);
+  background: linear-gradient(to left, transparent, var(--main-background));
   color: transparent;
   height: 80px;
   width: 100px;
@@ -85,8 +109,8 @@ html[data-theme=dark] .hideInDark {
 
 html[data-theme=dark] .mainTitle {
   background: linear-gradient(to right, #4824ff, #4824ff, #85ebff, #eeebff, #85aeff, #4824ff, #4824ff);
+  background-clip: text;
   -webkit-background-clip: text;
-          background-clip: text;
   color: transparent;
   background-size: 200%;
   animation: gradientAnimation 5s linear infinite;
@@ -101,11 +125,14 @@ html[data-theme=dark] .mainTitle {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
+  .portfolioBlock {
+    padding-top: 150px;
+  }
   .portfolioBlock .firstBlock {
     gap: 20px;
   }
   .portfolioBlock .mainTitle {
-    font-size: 44px;
+    font-size: 40px;
   }
   .portfolioBlock .subTitle {
     font-size: 20px;
@@ -123,8 +150,7 @@ html[data-theme=dark] .mainTitle {
     padding: 6px 18px;
     margin-right: 10px;
   }
-  .gradiantPartOne,
-  .gradiantPartTwo {
+  .gradiantPartOne, .gradiantPartTwo {
     height: 60px;
   }
   .gradiantPartOne {
@@ -133,12 +159,31 @@ html[data-theme=dark] .mainTitle {
   .gradiantPartTwo {
     width: 80px;
   }
-  html[data-theme=dark] .mainTitle {
-    background: linear-gradient(to right, #4824ff, #4824ff, #85ebff, #eeebff, #85aeff, #4824ff, #4824ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-size: 200%;
-    animation: gradientAnimation 6s linear infinite;
+}
+@media (max-width: 768px) {
+  .gradiantPartOne, .gradiantPartTwo, .titleBorder {
+    display: none;
+  }
+  .blockSubTitle {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 689px) {
+  .portfolioBlock {
+    padding-top: 100px;
+  }
+  .mainTitle {
+    font-size: 35px;
+  }
+  .arrayIcon {
+    width: 25px;
+  }
+  .subCategory {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .subTitle {
+    font-size: 18px;
   }
 }/*# sourceMappingURL=portfolioblock.module.css.map */

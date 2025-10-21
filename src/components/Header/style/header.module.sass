@@ -1,67 +1,66 @@
 .menu
-    height: 100px
-    width: 100%
-    align-content: center
+  height: 100px
+  width: 100%
+  align-content: center
 
 .headerBlock
-    display: flex
-    height: 8vh
-    place-items: center
-    transition: drop-shadow 0.5s ease
+  display: flex
+  height: 8vh
+  place-items: center
+  transition: drop-shadow 0.5s ease
 
-    & a
-        font-size: 18px
-        font-weight: 500
-        margin-right: 2%
-        transition: 0.3s ease-in-out
-        cursor: pointer
-
-        &:hover
-            color: #4824ff
-            filter: drop-shadow(0px 0px 50px #4824ff)
-
-    &.fixed
-        position: fixed
-        top: 0
-        left: 0
-        right: 0
-        padding: 0px 50px 0px 50px
-        background-color: rgba(255, 255, 255, 0.9)
-        z-index: 1000
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
-
-html[data-theme='dark'] .fixed
-    background-color: rgba(4, 0, 26, 0.9)
-
-.icon
-    width: 50px
-    border-radius: 50%
-    background: black
-    cursor: pointer
+  & a
+    font-size: 18px
+    font-weight: 500
+    margin-right: 2%
     transition: 0.3s ease-in-out
-    display: flex
-    justify-content: center
-    align-items: center
-    filter: invert(0)
-
-    &.telegram
-        padding: 8px 9px 8px 8px
-        content: url(/icons/telegramLogo.png)
-
-    &.instagram
-        padding: 6px
-        content: url(/icons/instagramLogo.png)
+    cursor: pointer
 
     &:hover
-        background: #4824ff
-        filter: drop-shadow(0px 0px 35px #4824ff)
+      color: #4824ff
+      filter: drop-shadow(0px 0px 50px #4824ff)
+
+    &.fixed
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      padding: 0px 50px 0px 50px
+      background-color: rgba(255, 255, 255, 0.9)
+      z-index: 1000
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+
+html[data-theme='dark'] .fixed
+  background-color: rgba(4, 0, 26, 0.9)
+
+.icon
+  width: 50px
+  border-radius: 50%
+  background: black
+  cursor: pointer
+  transition: 0.3s ease-in-out
+  display: flex
+  justify-content: center
+  align-items: center
+  filter: invert(0)
+
+  &.telegram
+    padding: 8px 9px 8px 8px
+    content: url(/icons/telegramLogo.png)
+
+  &.instagram
+    padding: 6px
+    content: url(/icons/instagramLogo.png)
+
+  &:hover
+    background: #4824ff
+    filter: drop-shadow(0px 0px 35px #4824ff)
 
 html[data-theme='dark'] .icon
   filter: invert(1)
 
 html[data-theme='dark'] .icon:hover
   filter: invert(0) drop-shadow(0px 0px 35px #4824ff)
-
 
 /* Переключатели */
 
@@ -239,7 +238,7 @@ html[data-theme='dark'] .icon:hover
     justify-content: space-between
 
   .menu
-    display: none 
+    display: none
 
   .burgerIcon
     display: block
@@ -288,7 +287,7 @@ html[data-theme='dark'] .icon:hover
     justify-content: space-between
 
   .menu
-    display: none 
+    display: none
 
   .burgerIcon
     display: block
@@ -342,13 +341,14 @@ html[data-theme='dark'] .icon:hover
 
 /* ====== 0–600 px: прячем верхние кнопки, показываем их в бургере ====== */
 @media (max-width: 600px)
+
   .headerButtons
-    display: none 
+    display: none
 
   .menuActions
     display: flex
     flex-direction: column
-    flex-direction: column-reverse 
+    flex-direction: column-reverse
     align-items: center
     justify-content: center
 
@@ -366,3 +366,7 @@ html[data-theme='dark'] .icon:hover
 
   .menuActions .switch
     transform: none
+
+@media (max-width: 560px)
+  .switch
+    width: 90px

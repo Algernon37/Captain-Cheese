@@ -72,7 +72,7 @@ body{
 }
 
 html[data-theme='light'] {
-    --main-background: #FFF8E7;
+    --main-background: #E5E5E5;
     --main-text-color: black;
     --switch-background: #eeebff;
     --main-element-color: #eeebff;

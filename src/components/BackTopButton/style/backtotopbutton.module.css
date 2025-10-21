@@ -19,4 +19,10 @@
 }
 .backToTop__visible:hover {
   filter: drop-shadow(0 0 35px #4824ff);
+}
+
+@media (max-width: 768px) {
+  .backToTop {
+    width: 50px;
+  }
 }/*# sourceMappingURL=backtotopbutton.module.css.map */

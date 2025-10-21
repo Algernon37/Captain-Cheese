@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .menu {
   height: 100px;
   width: 100%;
@@ -6,14 +7,14 @@
 
 .headerBlock {
   display: flex;
-  height: 13vh;
+  height: 8vh;
   place-items: center;
   transition: drop-shadow 0.5s ease;
 }
 .headerBlock a {
   font-size: 18px;
   font-weight: 500;
-  margin-right: 3%;
+  margin-right: 2%;
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -21,7 +22,7 @@
   color: #4824ff;
   filter: drop-shadow(0px 0px 50px #4824ff);
 }
-.headerBlock.fixed {
+.headerBlock a.fixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -68,6 +69,7 @@ html[data-theme=dark] .icon:hover {
   filter: invert(0) drop-shadow(0px 0px 35px #4824ff);
 }
 
+/* Переключатели */
 .switch {
   width: 100px;
   height: 55px;
@@ -96,13 +98,6 @@ html[data-theme=dark] .icon:hover {
   content: url(/icons/moonLogo.png);
 }
 
-.headerButtons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
 .language {
   margin: 2px;
   width: 51px;
@@ -121,6 +116,14 @@ html[data-theme=dark] .icon:hover {
   content: url(/icons/ru.png);
 }
 
+.headerButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Бургер и меню */
 .burgerMenu {
   position: fixed;
   top: 10vh;
@@ -162,7 +165,7 @@ html[data-theme=dark] .icon:hover {
   z-index: 1100;
 }
 .burgerIcon:hover, .burgerIcon:active {
-  filter: drop-shadow(0px 0px 35px #4824ff);
+  filter: drop-shadow(0 0 35px #4824ff);
 }
 .burgerIcon.light {
   background-image: url("/icons/menuDark.png");
@@ -171,6 +174,21 @@ html[data-theme=dark] .icon:hover {
   background-image: url("/icons/menu.png");
 }
 
+/* Кнопки внутри бургер-меню (покажем на узких экранах) */
+.menuActions {
+  display: none;
+  margin-top: 10px;
+  gap: 12px;
+}
+
+.menuActionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Анимации */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -189,7 +207,8 @@ html[data-theme=dark] .icon:hover {
     opacity: 1;
   }
 }
-@media (max-width: 1460px) {
+/* ========= АДАПТИВ ДО 1460 ========= */
+@media (max-width: 1482px) {
   .headerBlock {
     justify-content: space-between;
   }
@@ -209,6 +228,171 @@ html[data-theme=dark] .icon:hover {
     color: #fff;
   }
   html[data-theme=dark] .burgerMenu a:hover {
-    filter: invert(0) drop-shadow(0px 0px 35px #4824ff);
+    filter: invert(0) drop-shadow(0 0 35px #4824ff);
+  }
+}
+/* ========= ДОП. БЛОК (твой пример) ========= */
+@media (min-width: 320px) and (max-width: 425px) {
+  .contactsBlock {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 120px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+}
+/* Фиксы компоновки: бургер фиксированной ширины, кнопки — эластичные */
+.headerBlock {
+  align-items: center;
+}
+
+.burgerIcon {
+  flex: 0 0 40px;
+}
+
+/* ====== 561–700 px ====== */
+@media (min-width: 561px) and (max-width: 700px) {
+  .headerBlock {
+    padding: 0 12px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .menu {
+    display: none;
+  }
+  .burgerIcon {
+    display: block;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    z-index: 1100;
+  }
+  .headerButtons {
+    flex: 1 1 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    row-gap: 6px;
+  }
+  .headerButtons > *:first-child {
+    transform: scale(0.85);
+    transform-origin: left center;
+  }
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+  .icon.telegram {
+    padding: 5px 6px 5px 5px;
+  }
+  .icon.instagram {
+    padding: 4px;
+  }
+  .switch {
+    width: 78px;
+    height: 44px;
+    border-radius: 44px;
+  }
+  .theme, .language {
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+  }
+}
+/* ====== 320–560 px ====== */
+@media (min-width: 320px) and (max-width: 560px) {
+  .headerBlock {
+    height: 64px;
+    padding: 0 14px;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .menu {
+    display: none;
+  }
+  .burgerIcon {
+    display: block;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+  }
+  .headerButtons {
+    gap: 8px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  .headerButtons > *:first-child {
+    transform: scale(0.88);
+    transform-origin: left center;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .icon.telegram {
+    padding: 6px 7px 6px 6px;
+  }
+  .icon.instagram {
+    padding: 5px;
+  }
+  .switch {
+    transform: scale(0.82);
+    transform-origin: right center;
+  }
+  .theme, .language {
+    border-radius: 55px;
+  }
+  .burgerMenu {
+    top: 70px;
+    right: 4vw;
+    left: auto;
+    width: 92vw;
+    max-width: none;
+    padding: 22px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+  .headerBlock.fixed {
+    padding: 0 12px;
+  }
+}
+/* ====== 0–600 px: прячем верхние кнопки, показываем их в бургере ====== */
+@media (max-width: 600px) {
+  .headerButtons {
+    display: none;
+  }
+  .menuActions {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .menuActionsRow {
+    margin-top: 8px;
+  }
+  .menuActions Button,
+  .menuActions button {
+    transform: none;
+    width: 220px;
+  }
+  .menuActions .icon {
+    width: 44px;
+    height: 44px;
+  }
+  .menuActions .switch {
+    transform: none;
+  }
+}
+@media (max-width: 560px) {
+  .switch {
+    width: 90px;
   }
 }/*# sourceMappingURL=header.module.css.map */

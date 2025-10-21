@@ -6,7 +6,7 @@ const Contact = () => {
 
   return (
     <div className={style.contactsBlock} id="Contacts">
-      <img src="images/BigPictureContacts.png" alt="cheese farm" />
+      <img src="images/BigPictureContacts.webp" alt="cheese farm" />
       <div className={style.contactsBlock__inner}>
         <h1 className={style.mainTitle}>
           {t('contact.title')}

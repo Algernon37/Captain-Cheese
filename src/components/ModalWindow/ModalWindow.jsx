@@ -39,8 +39,8 @@ const ModalWindow = ({ show, onClose }) => {
             <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
                 <button onClick={onClose} className={style.modelCloseButton} aria-label="Close modal"></button>
                 <h2 className='text-[#4824ff] text-4xl mb-4'>{t("modalContact.contactTitle")}</h2>
-                <p className='text-2xl'>{t("modalContact.contactText")}</p>
-                <div className='flex gap-4 mt-4'>
+                <p className={style.textModal}>{t("modalContact.contactText")}</p>
+                <div className={style.socialBlock}>
                     <a href="https://t.me/capcheese" target="_blank" className={style.socialButton}>
                         <div className={`${style.social} ${style.telegram}`}></div><p>Telegram</p>
                     </a>

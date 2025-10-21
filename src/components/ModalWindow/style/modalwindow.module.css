@@ -21,6 +21,16 @@
   transform: translateY(0);
 }
 
+.textModal {
+  font-size: 1.5rem;
+}
+
+.socialBlock {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .modalContent {
   position: relative;
   background: white;
@@ -108,35 +118,51 @@ html[data-theme=dark] .modalContent {
   content: url(/icons/instagramLogo.png);
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+.modalContent {
+  width: 400px;
+  height: auto;
+  padding: 30px;
+  border-radius: 14px;
+}
+
+.modelCloseButton {
+  top: 16px;
+  right: 16px;
+  width: 45px;
+  height: 45px;
+}
+.modelCloseButton::before, .modelCloseButton::after {
+  width: 26px;
+}
+
+.socialButton {
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.social.telegram {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+
+.social.instagram {
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .socialBlock {
+    align-items: center;
+    flex-direction: column;
+  }
+  .textModal {
+    font-size: 16px;
+  }
   .modalContent {
-    width: 400px;
-    height: auto;
-    padding: 30px;
-    border-radius: 14px;
-  }
-  .modelCloseButton {
-    top: 16px;
-    right: 16px;
-    width: 45px;
-    height: 45px;
-  }
-  .modelCloseButton::before, .modelCloseButton::after {
-    width: 26px;
-  }
-  .socialButton {
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
-  }
-  .social.telegram {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-  }
-  .social.instagram {
-    width: 30px;
-    height: 30px;
-    margin-right: 6px;
+    width: 90%;
+    padding: 20px;
   }
 }/*# sourceMappingURL=modalwindow.module.css.map */

@@ -20,6 +20,14 @@
         & .modalContent
             transform: translateY(0)
 
+.textModal
+    font-size: 1.5rem
+
+.socialBlock
+    display: flex
+    gap: 1rem
+    margin-top: 1rem
+
 .modalContent
     position: relative
     background: white
@@ -57,7 +65,7 @@ html[data-theme='dark'] .modalContent
         width: 30px
         height: 2px
         background-color: #333
-        
+
     &::before
         transform: translate(-50%, -50%) rotate(45deg)
 
@@ -66,10 +74,10 @@ html[data-theme='dark'] .modalContent
 
     &:hover
         background-color: #4824ff
-    
+
         &::before,
         &::after
-            background-color: white 
+            background-color: white
 
 .socialButton
     display: flex
@@ -91,12 +99,11 @@ html[data-theme='dark'] .modalContent
         filter: drop-shadow(0px 0px 10px #4824ff)
         color: #eeebff
 
-.social.telegram 
+.social.telegram
     width: 25px
     height: 25px
     margin-right: 10px
     content: url(/icons/telegramLogo.png)
-
 
 .social.instagram
     width: 33px
@@ -105,13 +112,13 @@ html[data-theme='dark'] .modalContent
     content: url(/icons/instagramLogo.png)
 
 @media (min-width: 768px) and (max-width: 1024px)
-  .modalContent
+.modalContent
     width: 400px
     height: auto
     padding: 30px
     border-radius: 14px
 
-  .modelCloseButton
+.modelCloseButton
     top: 16px
     right: 16px
     width: 45px
@@ -119,22 +126,31 @@ html[data-theme='dark'] .modalContent
 
     &::before,
     &::after
-      width: 26px
+        width: 26px
 
-  .socialButton
+.socialButton
     width: 200px
     height: 50px
     font-size: 18px
 
-  .social.telegram
+.social.telegram
     width: 22px
     height: 22px
     margin-right: 8px
 
-  .social.instagram
+.social.instagram
     width: 30px
     height: 30px
     margin-right: 6px
 
+@media (max-width: 768px)
+    .socialBlock
+        align-items: center
+        flex-direction: column
 
+    .textModal
+        font-size: 16px
 
+    .modalContent
+        width: 90%
+        padding: 20px

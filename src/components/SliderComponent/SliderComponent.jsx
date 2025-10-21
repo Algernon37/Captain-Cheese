@@ -97,20 +97,26 @@ export default function SliderComponent() {
       })}
 
       <div className={style.vignette} aria-hidden="true" />
+      
       <div className={style.content}>
-        <div className="flex items-center justify-center gap-4">
-          <h1 className={style.title}>Captain&nbsp;Cheese</h1>
-          <img
-            src="/favicon-96x96.png"
-            alt="Captain Cheese logo"
-            className={style.logo}
-            draggable="false"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
+        <div className={style.heroBlock}>
+          <div className="flex items-center justify-center gap-4 max-[425px]:flex-col">
+            <h1 className={style.title}>Captain&nbsp;Cheese</h1>
+            <img
+              src="/favicon-96x96.png"
+              alt="Captain Cheese logo"
+              className={style.logo}
+              draggable="false"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
+          <p className={style.subtitle}>{t("hero.subtitle")}</p>
         </div>
-        <p className={style.subtitle}>{t("hero.subtitle")}</p>
+        <p className={`${style.subtitle} opacity-80`}>
+          {t("hero.subtitle2")}
+        </p>
       </div>
     </section>
   );
