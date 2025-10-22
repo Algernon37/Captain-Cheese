@@ -31,14 +31,14 @@ const PortfolioBlock = () => {
       <div className={style.firstBlock}>
         <h1 className={style.mainTitle}>{t('portfolio.title')}</h1>
 
-        <div className={`absolute ml-[-660px] ${style.hideInDark}`}>
+        {/* <div className={`absolute ml-[-660px] ${style.hideInDark}`}>
           <p className={style.gradiantPartOne}></p>
           <p className={style.titleBorder}>{t('portfolio.title').slice(0, 6)}</p>
         </div>
         <div className={`absolute ml-[660px] ${style.hideInDark}`}>
           <p className={style.gradiantPartTwo}></p>
           <p className={style.titleBorder}>{t('portfolio.title').slice(6)}</p>
-        </div>
+        </div> */}
 
         <img className={style.arrayIcon} src="/icons/array.png" alt="array" draggable="false" />
       </div>

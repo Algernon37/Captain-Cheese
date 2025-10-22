@@ -3,7 +3,7 @@ import style from "./style/SliderComponent.module.sass";
 import { useTranslation } from "react-i18next";
 
 const IMAGES = [
-  "/images/hero/slide1.webp", 
+  "/images/hero/slide1.webp",
   "/images/hero/slide2.webp",
   "/images/hero/slide3.webp",
   "/images/hero/slide4.webp",
@@ -17,6 +17,7 @@ export default function SliderComponent() {
   const timerRef = useRef(null);
   const abortRef = useRef(null);
   const nextIndex = useMemo(() => (index + 1) % IMAGES.length, [index]);
+
   useEffect(() => {
     let done = false;
     const fire = () => {
@@ -36,7 +37,9 @@ export default function SliderComponent() {
     img.onload = fire;
     img.onerror = fire;
 
-    return () => { done = true; };
+    return () => {
+      done = true;
+    };
   }, []);
 
   useEffect(() => {
@@ -47,16 +50,23 @@ export default function SliderComponent() {
       const imgEl = new Image();
       imgEl.decoding = "async";
       if ("fetchPriority" in imgEl) imgEl.fetchPriority = "low";
-      imgEl.src = IMAGES[nextIndex];
+      imgEl.src = `${IMAGES[nextIndex]}?v=${Date.now()}`;
 
-      if (abortRef.current) abortRef.current.abort();
       const ac = new AbortController();
+      abortRef.current?.abort();
       abortRef.current = ac;
 
       try {
-        if (imgEl.decode) await imgEl.decode();
-        if (!ac.signal.aborted) setIndex(nextIndex);
+        const decodePromise = imgEl.decode ? imgEl.decode() : Promise.resolve();
+        const onloadPromise = new Promise((resolve) => (imgEl.onload = resolve));
+        const onerrorPromise = new Promise((_, reject) => (imgEl.onerror = reject));
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("image timeout")), 12000)
+        );
+
+        await Promise.race([decodePromise, onloadPromise, onerrorPromise, timeoutPromise]);
       } catch {
+      } finally {
         if (!ac.signal.aborted) setIndex(nextIndex);
       }
     };
@@ -66,7 +76,7 @@ export default function SliderComponent() {
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
-      if (abortRef.current) abortRef.current.abort();
+      abortRef.current?.abort();
     };
   }, [index, nextIndex]);
 
@@ -86,7 +96,7 @@ export default function SliderComponent() {
             className={[
               style.slide,
               isActive ? style.isActive : "",
-              isNext ? style.isFadingIn : "",   
+              isNext ? style.isFadingIn : "",
             ].join(" ")}
             decoding="async"
             loading={i === 0 ? "eager" : "lazy"}
@@ -97,7 +107,7 @@ export default function SliderComponent() {
       })}
 
       <div className={style.vignette} aria-hidden="true" />
-      
+
       <div className={style.content}>
         <div className={style.heroBlock}>
           <div className="flex items-center justify-center gap-4 max-[425px]:flex-col">
@@ -114,9 +124,7 @@ export default function SliderComponent() {
           </div>
           <p className={style.subtitle}>{t("hero.subtitle")}</p>
         </div>
-        <p className={`${style.subtitle} opacity-80`}>
-          {t("hero.subtitle2")}
-        </p>
+        <p className={style.subtitle}>{t("hero.subtitle2")}</p>
       </div>
     </section>
   );

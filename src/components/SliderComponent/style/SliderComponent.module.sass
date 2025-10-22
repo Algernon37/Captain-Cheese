@@ -19,7 +19,7 @@
     inset: 0
     pointer-events: none
     z-index: 3
-    background: radial-gradient(1400px 700px at 50% -10%, rgba(72,36,255,.16), transparent 60%),linear-gradient(180deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.60) 40%, rgba(0,0,0,0.70) 100%)
+    background: radial-gradient(1400px 700px at 50% -10%, rgba(72,36,255,.08), transparent 60%),linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.32) 40%, rgba(0,0,0,0.42) 100%)
 
 .slide
   position: absolute
@@ -53,18 +53,19 @@
   margin: 0 auto
   display: flex
   flex-direction: column
-  justify-content: center
-  text-align: left
   justify-content: space-between
   padding: 12vh 24px 10vh
   gap: 6px
 
 .logo
-  width: 72px
-  height: 72px
+  width: 88px
+  height: 88px
   border-radius: 20px
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.35))
   user-select: none
+  transform: translate(10px, -8px)
+  margin-bottom: 40px
+  margin-left: 20px
 
 .title
   margin: 0
@@ -75,27 +76,37 @@
   font-size: clamp(32px, 5.2vw, 76px)
   color: #ffffff
   text-shadow: 0 0 30px rgba(0,0,0,.25)
+  transform: translate(-8px, -6px)
 
 .subtitle
   max-width: 800px
-  margin: 6px 0 0
+  margin: 6px auto 0
   color: rgba(255,255,255,.92)
   font-size: clamp(16px, 2.2vw, 22px)
   line-height: 1.5
+  text-align: center
 
 @media (max-width: 768px)
   .content
     padding: 14vh 18px 10vh
-    gap: 4px
+    gap: 8px
   .logo
-    width: 60px
-    height: 60px
+    width: 72px
+    height: 72px
     border-radius: 16px
+    transform: translate(6px, -6px)
+
+  .title
+    transform: translate(-4px, -4px)
 
 @media (min-width: 1600px)
   .hero::after
-    background: radial-gradient(1400px 700px at 50% -10%, rgba(72,36,255,.16), transparent 60%),linear-gradient(180deg, rgba(0,0,0,0.46) 0%, rgba(0,0,0,0.62) 50%, rgba(0,0,0,0.70) 100%)
+    background: radial-gradient(1400px 700px at 50% -10%, rgba(72,36,255,.12), transparent 60%), linear-gradient(180deg, rgba(0,0,0,0.36) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.60) 100%)
 
-@media (max-width: 425px)
+@media (max-width: 424px)
   .subtitle
     text-align: center
+
+  .logo
+    margin-bottom: 0px
+    margin-left: 0px

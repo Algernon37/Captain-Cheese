@@ -16,10 +16,8 @@ const FAQSection = () => {
   return (
     <section className={style.faqBlock} id="FAQ">
       <div className={style.faqContent}>
-        <h1 className={style.faqTitle}>
-          {t('faq.title')}
-        </h1>
-        <ul className="max-w-3xl mx-auto space-y-4">
+        <h1 className={style.faqTitle}>{t('faq.title')}</h1>
+        <ul className={style.faqList}>
           {questions.map((q, index) => (
             <FAQItem
               key={index}
@@ -31,11 +29,12 @@ const FAQSection = () => {
           ))}
         </ul>
       </div>
+
+      <div className={style.faqImageBox}>
+        <img src="/images/faq-side.webp" alt="Cheese illustration" draggable="false" />
+      </div>
     </section>
   );
 };
 
 export default FAQSection;
-
-
-    

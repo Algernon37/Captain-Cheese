@@ -16,7 +16,7 @@ function App() {
       <SliderComponent />
       <WelcomeBlock />
       <PortfolioBlock />
-      <ReviewBlock />
+      {/* <ReviewBlock /> */}
       <Guarantees />
       <BackToTopButton />
       <FAQSection />
