@@ -9,7 +9,7 @@ const ComingSoonComponent = () => {
       <div
         className="
           relative 
-          rounded-2xl 
+          rounded-full
           overflow-hidden 
           [box-shadow:0_0_18px_rgba(72,36,255,0.35)] 
           [will-change:transform] 
