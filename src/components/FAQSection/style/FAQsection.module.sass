@@ -3,7 +3,7 @@
   justify-content: center
   align-items: flex-start
   gap: 80px
-  padding: 200px 5vw 0px 5vw
+  padding: 200px 5vw 0 5vw
   background: var(--main-background)
   color: var(--main-text-color)
 
@@ -48,17 +48,33 @@ html[data-theme='dark'] .answer
   justify-content: center
   align-items: center
 
-  img
+  /* обёртка: мягкая тень, без артефактов */
+  .imgWrap
+    position: relative
     width: 100%
     max-width: 520px
     border-radius: 20px
-    object-fit: cover
-    filter: drop-shadow(0 0 30px rgba(72,36,255,0.3))
-    transition: transform .4s ease, filter .4s ease
+    overflow: hidden
+    box-shadow: 0 0 22px rgba(72,36,255,.18)
+    will-change: transform
+    transform: translateZ(0)
+    backface-visibility: hidden
+    isolation: isolate
+    contain: paint
 
-    &:hover
-      transform: scale(1.03)
-      filter: drop-shadow(0 0 40px rgba(72,36,255,0.45))
+    img
+      display: block
+      width: 100%
+      height: auto
+      border-radius: inherit
+      object-fit: cover
+      transform: translateZ(0)
+      backface-visibility: hidden
+
+@media (hover: hover)
+  .faqImageBox .imgWrap:hover
+    transform: translateZ(0) scale(1.03)
+    box-shadow: 0 0 28px rgba(72,36,255,.28)
 
 /* ====== Планшеты ====== */
 @media (max-width: 1024px)
@@ -78,6 +94,12 @@ html[data-theme='dark'] .answer
 
   .faqImageBox
     width: 80%
+    order: -1
+
+    .imgWrap
+      max-width: 520px
+      border-radius: 18px
+      box-shadow: 0 0 18px rgba(72,36,255,.22)
 
   .subtitle
     font-size: 20px
@@ -109,12 +131,13 @@ html[data-theme='dark'] .answer
   .faqImageBox
     width: 100%
 
-    img
+    .imgWrap
       max-width: 100%
       border-radius: 16px
-      filter: drop-shadow(0 0 20px rgba(72,36,255,0.25))
+      box-shadow: 0 0 15px rgba(72,36,255,.2)
 
+/* ====== 767–1023 px уточнение размера картинки ====== */
 @media (min-width: 767px) and (max-width: 1023px)
-  .faqImageBox
-    img
-      max-width: 420px
+  .faqImageBox .imgWrap
+    max-width: 420px
+

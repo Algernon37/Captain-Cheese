@@ -31,7 +31,9 @@ const FAQSection = () => {
       </div>
 
       <div className={style.faqImageBox}>
-        <img src="/images/faq-side.webp" alt="Cheese illustration" draggable="false" />
+        <div className={style.imgWrap}>
+          <img src="/images/faq-side.webp" alt="Cheese illustration" draggable="false" />
+        </div>
       </div>
     </section>
   );

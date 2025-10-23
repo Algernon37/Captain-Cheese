@@ -6,12 +6,28 @@ const ComingSoonComponent = () => {
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 px-4 text-center">
-      <img
-        src="/favicon-96x96.png"
-        alt="Captain Cheese Logo"
-        className="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_20px_rgba(72,36,255,0.4)]"
-        draggable="false"
-      />
+      <div
+        className="
+          relative 
+          rounded-2xl 
+          overflow-hidden 
+          [box-shadow:0_0_18px_rgba(72,36,255,0.35)] 
+          [will-change:transform] 
+          [backface-visibility:hidden] 
+          [contain:paint] 
+          [transform:translateZ(0)]
+        "
+      >
+        <img
+          src="/favicon-96x96.png"
+          alt="Captain Cheese Logo"
+          className="block w-14 h-14 sm:w-16 sm:h-16"
+          draggable="false"
+          decoding="async"
+          fetchPriority="low"
+        />
+      </div>
+
       <h2
         className="
           animatedGradient 
