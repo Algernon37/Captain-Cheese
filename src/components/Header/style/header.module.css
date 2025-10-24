@@ -7,36 +7,42 @@
 
 .headerBlock {
   display: flex;
+  align-items: center;
   height: 8vh;
-  place-items: center;
-  transition: drop-shadow 0.5s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 .headerBlock a {
   font-size: 18px;
   font-weight: 500;
   margin-right: 2%;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 .headerBlock a:hover {
   color: #4824ff;
-  filter: drop-shadow(0px 0px 50px #4824ff);
+  filter: drop-shadow(0 0 50px #4824ff);
 }
-.headerBlock a.fixed {
+
+.headerBlock.fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0px 50px 0px 50px;
-  background-color: rgba(255, 255, 255, 0.9);
   z-index: 1000;
+  padding: 0 50px;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+          backdrop-filter: saturate(140%) blur(8px);
 }
 
-html[data-theme=dark] .fixed {
-  background-color: rgba(4, 0, 26, 0.9);
+html[data-theme=dark] .headerBlock.fixed {
+  background-color: rgba(4, 0, 26, 0.85);
 }
 
+/* Иконки */
 .icon {
   width: 50px;
   border-radius: 50%;
@@ -58,7 +64,7 @@ html[data-theme=dark] .fixed {
 }
 .icon:hover {
   background: #4824ff;
-  filter: drop-shadow(0px 0px 35px #4824ff);
+  filter: drop-shadow(0 0 35px #4824ff);
 }
 
 html[data-theme=dark] .icon {
@@ -66,7 +72,7 @@ html[data-theme=dark] .icon {
 }
 
 html[data-theme=dark] .icon:hover {
-  filter: invert(0) drop-shadow(0px 0px 35px #4824ff);
+  filter: invert(0) drop-shadow(0 0 35px #4824ff);
 }
 
 /* Переключатели */
@@ -174,7 +180,7 @@ html[data-theme=dark] .icon:hover {
   background-image: url("/icons/menu.png");
 }
 
-/* Кнопки внутри бургер-меню (покажем на узких экранах) */
+/* Кнопки внутри бургер-меню (для узких экранов) */
 .menuActions {
   display: none;
   margin-top: 10px;
@@ -231,7 +237,6 @@ html[data-theme=dark] .icon:hover {
     filter: invert(0) drop-shadow(0 0 35px #4824ff);
   }
 }
-/* ========= ДОП. БЛОК (твой пример) ========= */
 @media (min-width: 320px) and (max-width: 425px) {
   .contactsBlock {
     flex-direction: column;
@@ -241,7 +246,6 @@ html[data-theme=dark] .icon:hover {
     text-align: center;
   }
 }
-/* Фиксы компоновки: бургер фиксированной ширины, кнопки — эластичные */
 .headerBlock {
   align-items: center;
 }
@@ -363,7 +367,6 @@ html[data-theme=dark] .icon:hover {
     padding: 0 12px;
   }
 }
-/* ====== 0–600 px: прячем верхние кнопки, показываем их в бургере ====== */
 @media (max-width: 600px) {
   .headerButtons {
     display: none;

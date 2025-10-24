@@ -91,8 +91,6 @@ html[data-theme=dark] .icon:hover {
   .contactsBlock {
     flex-direction: column;
     gap: 40px;
-    padding-top: 100px;
-    margin-bottom: 100px;
     text-align: center;
   }
   .contactsBlock img {
@@ -102,6 +100,9 @@ html[data-theme=dark] .icon:hover {
   }
 }
 @media (max-width: 768px) {
+  .contactsBlock {
+    padding-top: 100px;
+  }
   .mainTitle {
     font-size: 40px;
     padding-bottom: 20px;

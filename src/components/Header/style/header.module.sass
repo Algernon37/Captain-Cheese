@@ -5,34 +5,36 @@
 
 .headerBlock
   display: flex
+  align-items: center
   height: 8vh
-  place-items: center
-  transition: drop-shadow 0.5s ease
+  transition: background-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease
 
   & a
     font-size: 18px
     font-weight: 500
     margin-right: 2%
-    transition: 0.3s ease-in-out
+    transition: color .3s ease, filter .3s ease
     cursor: pointer
 
     &:hover
       color: #4824ff
-      filter: drop-shadow(0px 0px 50px #4824ff)
+      filter: drop-shadow(0 0 50px #4824ff)
 
-    &.fixed
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      padding: 0px 50px 0px 50px
-      background-color: rgba(255, 255, 255, 0.9)
-      z-index: 1000
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+.headerBlock.fixed
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 1000
+  padding: 0 50px
+  background-color: rgba(255,255,255,.9)
+  box-shadow: 0 4px 10px rgba(0,0,0,.1)
+  backdrop-filter: saturate(140%) blur(8px)
 
-html[data-theme='dark'] .fixed
-  background-color: rgba(4, 0, 26, 0.9)
+html[data-theme='dark'] .headerBlock.fixed
+  background-color: rgba(4,0,26,.85)
 
+/* Иконки */
 .icon
   width: 50px
   border-radius: 50%
@@ -54,16 +56,15 @@ html[data-theme='dark'] .fixed
 
   &:hover
     background: #4824ff
-    filter: drop-shadow(0px 0px 35px #4824ff)
+    filter: drop-shadow(0 0 35px #4824ff)
 
 html[data-theme='dark'] .icon
   filter: invert(1)
 
 html[data-theme='dark'] .icon:hover
-  filter: invert(0) drop-shadow(0px 0px 35px #4824ff)
+  filter: invert(0) drop-shadow(0 0 35px #4824ff)
 
 /* Переключатели */
-
 .switch
   width: 100px
   height: 55px
@@ -114,7 +115,6 @@ html[data-theme='dark'] .icon:hover
   gap: 10px
 
 /* Бургер и меню */
-
 .burgerMenu
   position: fixed
   top: 10vh
@@ -161,7 +161,7 @@ html[data-theme='dark'] .icon:hover
   &.dark
     background-image: url('/icons/menu.png')
 
-/* Кнопки внутри бургер-меню (покажем на узких экранах) */
+/* Кнопки внутри бургер-меню (для узких экранов) */
 .menuActions
   display: none
   margin-top: 10px
@@ -174,7 +174,6 @@ html[data-theme='dark'] .icon:hover
   gap: 10px
 
 /* Анимации */
-
 @keyframes slideIn
   from
     opacity: 0
@@ -190,7 +189,6 @@ html[data-theme='dark'] .icon:hover
     opacity: 1
 
 /* ========= АДАПТИВ ДО 1460 ========= */
-
 @media (max-width: 1482px)
   .headerBlock
     justify-content: space-between
@@ -213,7 +211,6 @@ html[data-theme='dark'] .icon:hover
   html[data-theme='dark'] .burgerMenu a:hover
     filter: invert(0) drop-shadow(0 0 35px #4824ff)
 
-/* ========= ДОП. БЛОК (твой пример) ========= */
 
 @media (min-width: 320px) and (max-width: 425px)
   .contactsBlock
@@ -223,7 +220,6 @@ html[data-theme='dark'] .icon:hover
     margin-bottom: 100px
     text-align: center
 
-/* Фиксы компоновки: бургер фиксированной ширины, кнопки — эластичные */
 .headerBlock
   align-items: center
 
@@ -339,9 +335,7 @@ html[data-theme='dark'] .icon:hover
   .headerBlock.fixed
     padding: 0 12px
 
-/* ====== 0–600 px: прячем верхние кнопки, показываем их в бургере ====== */
 @media (max-width: 600px)
-
   .headerButtons
     display: none
 

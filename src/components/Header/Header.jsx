@@ -20,27 +20,26 @@ const Header = () => {
   const toggleBurger = () => setIsBurgerOpen(prev => !prev);
 
   useEffect(() => {
-    const handleScroll = () => setIsFixed(window.scrollY > 500);
+    const handleScroll = () => setIsFixed(window.scrollY > 500); // при необходимости уменьши порог
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1460 && isBurgerOpen) {
-        setIsBurgerOpen(false);
-      }
+      if (window.innerWidth > 1460 && isBurgerOpen) setIsBurgerOpen(false);
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isBurgerOpen]);
 
-
   return (
     <header>
       <div className={`${style.headerBlock} ${isFixed ? style.fixed : ''}`}>
-      <div className={`${style.burgerIcon} ${theme === 'dark' ? style.dark : style.light}`} onClick={toggleBurger} />
+        <div
+          className={`${style.burgerIcon} ${theme === 'dark' ? style.dark : style.light}`}
+          onClick={toggleBurger}
+        />
         <div className={style.menu}>
           <a href="#About">{t('menu.about')}</a>
           <a href="#Assortment">{t('menu.assortment')}</a>
@@ -49,6 +48,7 @@ const Header = () => {
           <a href="#FAQ">{t('menu.faq')}</a>
           <a href="#Contacts">{t('menu.contacts')}</a>
         </div>
+
         {isBurgerOpen && (
           <>
             <div className={style.overlay} onClick={toggleBurger} />
@@ -60,7 +60,6 @@ const Header = () => {
               <a onClick={toggleBurger} href="#FAQ">{t('menu.faq')}</a>
               <a onClick={toggleBurger} href="#Contacts">{t('menu.contacts')}</a>
 
-              {/* Кнопки/иконки/переключатели внутри бургера (видимы только ≤600px) */}
               <div className={style.menuActions}>
                 <Button onOpen={() => { toggleBurger(); handleOpenModal(); }} />
                 <div className={style.menuActionsRow}>
@@ -85,6 +84,7 @@ const Header = () => {
             </div>
           </>
         )}
+
         <div className={style.headerButtons}>
           <Button onOpen={handleOpenModal} />
           <a href="https://t.me/capcheese" target="_blank" className={`${style.icon} ${style.telegram}`} />
@@ -103,10 +103,10 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {isFixed && <div style={{ height: '8vh' }} />}
       <ModaleWindow show={showModal} onClose={handleCloseModal} />
     </header>
   );
 };
 
 export default Header;
-

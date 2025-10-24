@@ -1,57 +1,34 @@
 import style from './style/guarantees.module.sass';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 const Guarantees = () => {
   const { t } = useTranslation();
 
+  const items = Array.from({ length: 7 }, (_, i) => {
+    const n = i + 1;
+    return {
+      title: t(`guarantees.point${n}title`),
+      text: t(`guarantees.point${n}`),
+      key: `point${n}`,
+    };
+  });
+
   return (
-    <div className={style.guaranteesBlock} id="Guarantees">
-      <h1 className={style.guaranteesTitle}>
-        {t('guarantees.title')}
-      </h1>
+    <section className={style.guaranteesBlock} id="Guarantees">
+      <h1 className={style.guaranteesTitle}>{t('guarantees.title')}</h1>
+      
+      <p className={style.guaranteesSubtitle}>{t('guarantees.intro')}</p>
+
       <ol className={style.guaranteesPoints}>
-        <li className={style.point}>
-          <Trans
-            i18nKey="guarantees.point1"
-            components={{
-              1: <span className="text-[#4824ff]" />,
-              2: <br />
-            }}
-          />
-        </li>
-        <li className={style.point}>
-          <Trans
-            i18nKey="guarantees.point2"
-            components={{
-              1: <span className="text-[#4824ff]" />,
-              2: <br />
-            }}
-          />
-        </li>
-        <li className={style.point}>
-          <Trans
-            i18nKey="guarantees.point3"
-            components={{
-              1: <span className="text-[#4824ff]" />,
-              2: <br />,
-              3: <span className="text-[#4824ff]" />
-            }}
-          />
-        </li>
-        <li className={style.point}>
-          <Trans
-            i18nKey="guarantees.point4"
-            components={{
-              1: <span className="text-[#4824ff]" />,
-              2: <br />
-            }}
-          />
-        </li>
+        {items.map(({ key, title, text }) => (
+          <li className={style.point} key={key}>
+            <h3 className={style.pointTitle}>{title}</h3>
+            <p className={style.pointText}>{text}</p>
+          </li>
+        ))}
       </ol>
-    </div>
+    </section>
   );
 };
 
 export default Guarantees;
-
-
