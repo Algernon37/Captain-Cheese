@@ -79,5 +79,14 @@
     "description_en": "A hard cheese with a crumbly, delicate texture — made for true connoisseurs of bold flavors. Its coat of crushed black pepper gives a refined spiciness, beautifully balanced by a touch of honey or jam. Belper Knolle pairs perfectly with wine and makes an exquisite addition to pasta, vegetables, or salads.",
     "price": "12₾",
     "image": "1-9.webp"
+  },
+  {
+    "name": "1-10",
+    "title": "Cheese Balls",
+    "title_en": "Cheese Balls",
+    "description": "Шарики мягкого творожного сыра в обсыпке из орегано, паприки, куркумы и кунжута, с лёгкой ноткой чеснока — для яркости вкуса. Залиты растительным маслом, в котором специи раскрывают свой аромат, а сыр остаётся нежным и свежим.",
+    "description_en": "Soft cottage cheese balls coated in oregano, paprika, turmeric, and sesame, with a light touch of garlic for a bright flavor. They’re preserved in vegetable oil, where the spices unfold their aroma, keeping the cheese tender and fresh.",
+    "price": "25₾",
+    "image": "1-10.webp"
   }
 ]
