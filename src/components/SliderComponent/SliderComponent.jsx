@@ -110,7 +110,7 @@ export default function SliderComponent() {
 
       <div className={style.content}>
         <div className={style.heroBlock}>
-          <div className="flex items-center justify-center gap-4 max-[425px]:flex-col max-[425px]:items-center">
+          <div className="flex items-center justify-center max-[425px]:flex-col max-[425px]:items-center">
             <h1 className={style.title}>Captain&nbsp;Cheese</h1>
             <img
               src="/favicon-96x96.png"
