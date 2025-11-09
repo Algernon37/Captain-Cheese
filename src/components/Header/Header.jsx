@@ -43,7 +43,7 @@ const Header = () => {
         <div className={style.menu}>
           <a href="#About">{t('menu.about')}</a>
           <a href="#Assortment">{t('menu.assortment')}</a>
-          <a href="#Reviews">{t('menu.reviews')}</a>
+          {/* <a href="#Reviews">{t('menu.reviews')}</a> */}
           <a href="#Guarantees">{t('menu.guarantees')}</a>
           <a href="#FAQ">{t('menu.faq')}</a>
           <a href="#Contacts">{t('menu.contacts')}</a>
@@ -55,7 +55,7 @@ const Header = () => {
             <div className={style.burgerMenu}>
               <a onClick={toggleBurger} href="#About">{t('menu.about')}</a>
               <a onClick={toggleBurger} href="#Assortment">{t('menu.assortment')}</a>
-              <a onClick={toggleBurger} href="#Reviews">{t('menu.reviews')}</a>
+              {/* <a onClick={toggleBurger} href="#Reviews">{t('menu.reviews')}</a> */}
               <a onClick={toggleBurger} href="#Guarantees">{t('menu.guarantees')}</a>
               <a onClick={toggleBurger} href="#FAQ">{t('menu.faq')}</a>
               <a onClick={toggleBurger} href="#Contacts">{t('menu.contacts')}</a>
