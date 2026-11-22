@@ -36,7 +36,7 @@ const ModalCheeseWindow = ({ closeModal, selectedCheese }) => {
 
             <p className="text-base sm:text-lg md:text-xl mb-2">
               {t('modal.pricePer100g')}:{" "}
-              <span className="text-[#4824ff]">{selectedCheese.price}</span>
+
             </p>
 
             <p className="text-base sm:text-lg md:text-xl">{t('modal.contact')}</p>
